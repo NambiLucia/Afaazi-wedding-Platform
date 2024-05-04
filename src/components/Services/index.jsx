@@ -1,17 +1,18 @@
 import React from "react";
-import "./about.css"
+import "./services.css"
 import { FaStar} from 'react-icons/fa';
 
-const About = () => {
+function Services (){
   return (
-    <section id="about" className="section-about">
-      <div className="about-overlay">
-        <div className="about-text">
-          <h2>Why Afaazi</h2>
-        </div>
+    <section id="services" className="section-services">
+      <div className="services-overlay">
       </div>
 
-      <div className="about-card-container">
+  
+      <h2>SERVICE CATEGORIES</h2>
+       
+
+      <div className="services-card-container">
 
         <div className="card">
           <div className="card-content">
@@ -99,4 +100,4 @@ const About = () => {
   )
 }
 
-export default About;
+export default Services;

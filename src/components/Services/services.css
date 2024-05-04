@@ -1,14 +1,12 @@
 
-
-
-.section-about {
+.section-services {
     position: relative;
     background: url("/") bottom center/cover
       no-repeat;
       height: 650px;
     }
   
-  .about-overlay {
+  .services-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -17,7 +15,7 @@
     
   }
   
-  .about-text {
+  .services-text {
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -30,30 +28,30 @@
     gap: 16px;
   }
   
-  .about-text h2 {
+   h2 {
     font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem 0;
   }
   
-  .about-text h3 {
+  .services-text h4 {
     font-size: 2rem;
   }
 
 @media(max-width: 768px){
-    .about-text h2 {
+    .services-text h2 {
         font-size: 2rem;
       }
     
-      .about-text h3 {
+      .services-text h4 {
         font-size: 1.5rem;
       }
-
-
-      
+   
 }
 
 /*creating card*/
 
-.about-card-container {
+.services-card-container {
   display: flex;
   justify-content: center;
   align-items: center;

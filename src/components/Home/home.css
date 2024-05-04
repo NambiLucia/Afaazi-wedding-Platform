@@ -8,6 +8,8 @@
   --light-secondary-color: #ddd;
   --light-ternary-color: #eee;
   --overlay-color: rgba(0, 0, 0, 0.7);
+  --green:#0b4747;
+  --yellow:#ffcc00;
 }
 
 * {
