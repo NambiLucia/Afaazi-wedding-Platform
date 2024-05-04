@@ -1,0 +1,156 @@
+/* contact us */
+/* color:  red#ec1c24, black#212d31, grey#343a40, white#eee  */
+
+.contain {
+    background-color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+div.contact-form-container {
+    background-color: #eee;
+}
+
+.contact-wrapper {
+    margin: auto 0;
+}
+
+.submit-btn {
+    float: left;
+}
+
+.reset-btn {
+    float: right;
+}
+
+.form-headline:after {
+    content: "";
+    display: block;
+    width: 10%;
+    padding-top: 10px;
+}
+
+.highlight-text {
+    color: #ec1c24;
+}
+
+.highlight-text-grey {
+    font-weight: 500;
+}
+
+.email-info {
+    margin-top: 20px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome */
+    font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 600px) {
+    .contain {
+        padding: 0;
+    }
+}
+
+ul {
+    margin: 0;
+}
+
+.contact-form-input:focus,
+textarea:focus {
+    outline: 1.5px solid #ec1c24;
+}
+
+.contact-form-input,
+textarea {
+    width: 100%;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+}
+
+.header-wrapper>* {
+    padding: 1em;
+}
+
+@media (min-width: 700px) {
+    .header-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .header-wrapper>* {
+        padding: 2em 2em;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contacts {
+    color: #212d31;
+}
+
+.contact-form-container {
+    background: #fff;
+    margin-top: 70px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.contact-form label {
+    display: block;
+}
+
+.contact-form p {
+    margin: 0;
+}
+
+.full-width {
+    grid-column: 1 / 3;
+}
+
+.reset-btn,
+.submit-btn,
+.contact-form-input,
+.contact-textarea {
+    padding: 1em;
+}
+
+.reset-btn,
+.submit-btn {
+    background: transparent;
+    border-radius: 15px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+}
+
+.reset-btn {
+    border: 1px solid #ec1c24;
+    color: #ec1c24;
+}
+
+.submit-btn {
+    border: 1px solid green;
+    color: green;
+}
+
+.reset-btn:hover,
+.submit-btn:hover,
+.reset-btn:focus,
+.submit-btn:focus {
+    background: #ec1c24;
+    outline: 0;
+    color: #eee;
+}
+
+.name-error {
+    color: #ec1c24;
+}
