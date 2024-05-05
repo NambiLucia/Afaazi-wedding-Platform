@@ -38,16 +38,6 @@
     font-size: 2rem;
   }
 
-@media(max-width: 768px){
-    .services-text h2 {
-        font-size: 2rem;
-      }
-    
-      .services-text h4 {
-        font-size: 1.5rem;
-      }
-   
-}
 
 /*creating card*/
 
@@ -104,4 +94,15 @@
   margin-top: 8px;
   color: #555555;
   font-size: 17px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .services-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+  }
 }

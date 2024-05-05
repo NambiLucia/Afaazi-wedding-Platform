@@ -4,11 +4,15 @@ import "./vendors.css"
 function Vendors () {
   return (
     <section id="vendors" className="vendors-gallery">
+
       <div className="vendors-header">
         <h2>TRENDING VENDORS</h2>
       </div>
+
       <div className="vendors-card-container">
+
         <div className="vendors-card">
+          
           <div className="vendors-card-content">
             <div>
               <img src="\images\mona.png" alt="mona"/>
