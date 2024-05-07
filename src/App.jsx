@@ -7,6 +7,7 @@ import Login from "./components/Login/login";
 import Footer from "./components/Footer/index";
 import NotFound from "./components/Notfound/notfound"
 import BookingPage from "./components/BookingPage/BookingPage";
+import Gallery from "./components/Gallery";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/bookingpage"element={<BookingPage />} />
           <Route exact path="*" element={<NotFound />} />
+          <Route exact path="/gallery" element={<Gallery />} />
         </Routes>
         <Footer />
       </Router>

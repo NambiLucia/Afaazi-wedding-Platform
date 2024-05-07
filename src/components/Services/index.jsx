@@ -1,6 +1,9 @@
 import React from "react";
 import "./services.css"
 import { FaStar} from 'react-icons/fa';
+import { Link } from "react-router-dom";
+
+
 
 function Services (){
   return (
@@ -27,6 +30,8 @@ function Services (){
                     <FaStar />
                     <FaStar />
                 </div>
+
+         
               
 
             </div>
