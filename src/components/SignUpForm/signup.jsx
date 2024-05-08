@@ -4,7 +4,7 @@ import Footer from "../Footer"
 import RegisterForm from "../Register/RegisterForm"
 import {useEffect, useState} from 'react';
 
-const SignUpForm = () => {
+function SignUpForm () {
     const [users, setUsers] = useState([])
   let apiUrl = "http://http://localhost:5173//api/users?populate=*"
 

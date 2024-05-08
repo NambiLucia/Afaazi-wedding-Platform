@@ -1,7 +1,7 @@
 import React from 'react'
 import {useEffect, useState} from 'react';
 
-const LoginForm = ({title, type}) => {
+function LoginForm ({title, type}) {
     const[organisation, setOrganisation] = useState([])
     let apiUrl = "http://localhost:1337/api/organisations?populate=*"
   

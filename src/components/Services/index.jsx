@@ -31,8 +31,7 @@ function Services (){
                     <FaStar />
                 </div>
 
-         
-              
+                <Link to="/gallery" className="gallery-link">View more</Link>
 
             </div>
           </div>

@@ -14,8 +14,7 @@ function Gallery() {
       <p>Explore our event gallery!</p>
       <div className='photo-container'>
         <div className='Item'>
-          
-
+        
         </div>
 
       </div>
