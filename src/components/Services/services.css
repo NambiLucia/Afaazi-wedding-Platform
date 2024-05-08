@@ -1,0 +1,113 @@
+
+.section-services {
+    position: relative;
+    background: url("/") bottom center/cover
+      no-repeat;
+      height: 650px;
+    }
+  
+  .services-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+  }
+  
+  .services-text {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    margin: auto;
+    max-width: 860px;
+    padding: 1rem 0;
+    gap: 16px;
+  }
+  
+   h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .services-text h4 {
+    font-size: 2rem;
+  }
+
+
+/*creating card*/
+
+.services-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 0 10px;
+  border-radius: 20px;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit:cover;
+}
+
+
+.card-content {
+  padding: 16px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 17px;
+  text-align: center;
+  padding: 0.5em;
+}
+.card h4 {
+  margin: 0;
+  font-size: 17px;
+  text-align: center;
+
+}
+.icons{
+  margin: 0;
+  font-size: 17px;
+  text-align: center;
+  padding: 1em;
+}
+
+
+.card p {
+  margin-top: 8px;
+  color: #555555;
+  font-size: 17px;
+}
+.gallery-link{
+  color: #0b4747;
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .services-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+  }
+}

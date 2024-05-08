@@ -1,0 +1,25 @@
+.photo-container{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+}
+.Item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white(3, 64, 68);
+    border-radius: 8px;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 290px;
+    margin: 0 10px;
+    border-radius: 5px;
+    margin: 5px;
+    border-style: groove;
+}
+h1{
+    text-align: center;
+}

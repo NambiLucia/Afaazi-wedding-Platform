@@ -1,0 +1,63 @@
+
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .event-table td, .event-table th {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  
+  button {
+    margin-top: 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    display: inline-block; /* Ensures button occupies only necessary space */
+    text-align: center; /* Aligns text content in the center */
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .event-table-wrapper {
+    white-space: nowrap;
+  }
+  
+  .event-table-container {
+    display: inline-block;
+    vertical-align: top; 
+    margin-right: 20px; 
+  }
+  
+  /* Added styles for buttons */
+  .edit-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 1px;
+    border-radius: 5px;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  

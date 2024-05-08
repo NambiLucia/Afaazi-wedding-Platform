@@ -1,0 +1,51 @@
+
+#packages{
+  margin:5rem;
+}
+  .packages-header h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin:1em;
+  }
+
+.packages-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+
+.packages-card {
+  background-color: white(3, 64, 68);
+  border-radius: 8px;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 290px;
+  margin: 0 10px;
+  border-radius: 5px;
+  margin: 5px;
+  border-style: groove;
+}
+
+.packages-card-content {
+  padding: 16px;
+  overflow:hidden;
+}
+
+.packages-card h2 {
+  margin: 0;
+  font-size: 1.4em;
+  color: black(54, 6, 6);
+  text-align: center;
+  
+}
+
+.packages-card p {
+  margin-top: 8px;
+  color: black;
+  font-size: 1em;
+  text-align: center;
+}
