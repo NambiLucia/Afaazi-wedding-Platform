@@ -29,9 +29,9 @@ function Services (){
                     <FaStar />
                     <FaStar />
                     <FaStar />
+                 
                 </div>
-
-                <Link to="/gallery" className="gallery-link">View more</Link>
+                <p className="/gallery">View more</p>
 
             </div>
           </div>
@@ -92,7 +92,7 @@ function Services (){
           </div>
         </div>
         
-
+        
       </div>
 
     </section>
