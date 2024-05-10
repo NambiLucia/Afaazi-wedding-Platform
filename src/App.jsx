@@ -7,7 +7,8 @@ import Login from "./components/Login/login";
 import Footer from "./components/Footer/index";
 import NotFound from "./components/Notfound/notfound"
 import BookingPage from "./components/BookingPage/BookingPage";
-import Gallery from "./components/Gallery/index";
+import Gallery from "./components/Gallery/photo";
+
 
 
 function App() {
