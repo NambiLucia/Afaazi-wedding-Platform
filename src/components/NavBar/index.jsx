@@ -1,25 +1,55 @@
-
 import React from "react";
+import { FaHome, FaUser, FaClipboardList, FaImages, FaCalendarAlt, FaSignInAlt, FaEnvelope } from "react-icons/fa";
 import "./navbar.css";
 
-function NavBar () {
+function NavBar() {
     return (
-        <div className="topnav">
-            
-            <a className="active" href="/">Home</a>
-            <a href="/#services">Services</a>
-            <a href="/#vendors">Vendors</a>
-            <a href="/#packages">Packages</a>
-            <a href="/gallery">Gallery</a> 
-            <div className="topnav-right">
-            <a href="/bookingpage">Book wedding</a> 
-            <a href="/login">Login</a>  
-           
-                             
+        <nav className="navbar">
+            <div className="navbar-logo">
+                <a href="/"><FaHome /></a>
             </div>
-        </div>
-
-    )
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <a href="/services">
+                        <FaClipboardList />
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a href="/#vendors">
+                        <FaUser />
+                        <span>Vendors</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a href="/#packages">
+                        <FaCalendarAlt />
+                        <span>Packages</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a href="/gallery">
+                        <FaImages />
+                        <span>Gallery</span>
+                    </a>
+                </li>
+            </ul>
+            <div className="navbar-icons">
+                <a href="/bookingpage">
+                    <FaCalendarAlt />
+                    <span>Book Wedding</span>
+                </a>
+                <a href="/login">
+                    <FaSignInAlt />
+                    <span>Login</span>
+                </a>
+                <a href="/contact">
+                    <FaEnvelope />
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </nav>
+    );
 }
 
 export default NavBar;

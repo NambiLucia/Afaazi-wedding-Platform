@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import Login from "../Login/login";
 import Bookingpage from '../BookingPage/BookingPage';
 import Packages from "../Packages";
-import Gallery from "../Gallery/photo";
+import Gallery from "../Gallery";
 import "./home.css";
 
 
