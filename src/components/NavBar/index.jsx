@@ -28,6 +28,12 @@ function NavBar() {
             <span>Services</span>
           </a>
         </li>
+        <li className="nav-item">
+                    <a href="/gallery">
+                        <FaImages />
+                        <span>Gallery</span>
+                    </a>
+                </li>
 
         
         <li className="nav-item">
