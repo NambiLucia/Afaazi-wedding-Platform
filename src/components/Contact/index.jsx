@@ -43,9 +43,9 @@ function Contact () {
                             <li>content 1 <span className="highlight-text-grey">
                             content 2</span>  content 3</li>
                             <span className="hightlight-contact-info">
-                                <li className="email-info"><i className="fa fa-envelope" aria-hidden="true"></i> afaazievents.com</li>
-                                <li><i className="fa fa-phone" aria-hidden="true"></i> <span className="highlight-text">+256 111 111 111</span></li>
-                                <li><i className="fa fa-phone" aria-hidden="true"></i> <span className="highlight-text">+256 111 111 111</span></li>
+                                <li className="email-info"><i className="fa fa-envelope" aria-hidden="true"></i> info@afaazievents.com</li>
+                                <li><i className="fa fa-phone" aria-hidden="true"></i> <span className="highlight-text">+256 701 234 567</span></li>
+                                <li><i className="fa fa-phone" aria-hidden="true"></i> <span className="highlight-text">+256 772 345 678</span></li>
                             </span>
                         </ul>
                     </div>

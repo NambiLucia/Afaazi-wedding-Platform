@@ -1,107 +1,67 @@
 import React from "react";
-import "./services.css"
-import { FaStar} from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import "./services.css";
 
+function Services () {
+  const servicesData = [
+    {
+      image: "/images/brides.png",
+      title: "Wedding Planning Services",
+      description: "Description",
+    },
+    {
+      image: "/images/ashton.png",
+      title: "Corporate Event Services",
+      description: "Description",
+    },
+    {
+      image: "/images/baraka.png",
+      title: "Birthday Party Services",
+      description: "Description",
+    },
+    {
+      image: "/images/brides.png",
+      title: "Concert & Music Event ",
+      description: "Description",
+    },
+    {
+      image: "/images/baraka.png",
+      title: "Exhibition and Trade Show",
+      description: "Description",
+    },
+    {
+      image: "/images/brides.png",
+      title: "Festival and Cultural Event ",
+      description: "Description",
+    },
+   
+   
+  ];
 
-
-function Services (){
   return (
-    <section id="services" className="section-services">
-      <div className="services-overlay">
+    <div className="services-container">
+      <h1 className="title">Afaazi Services</h1>
+      <p className="subtitle">Explore our Services!</p>
+      <div className="card-container">
+        {servicesData.map((service, index) => (
+          <div className="card" key={index}>
+            <img
+              src={service.image}
+              alt={`Event ${index + 1}`}
+              className="card-image"
+            />
+            <div className="card-text">
+              <p className="service-title">{service.title}</p>
+              <p className="service-description">{service.description}</p>
+              <Link to="/gallery" className="registration-button">
+                View more
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
-
-  
-      <h2>SERVICE CATEGORIES</h2>
-       
-
-      <div className="services-card-container">
-
-        <div className="card">
-          <div className="card-content">
-            <h2>Photography & Videography</h2>
-            <div>
-              <img src="\images\baye.jpg" alt="photography"/>
-              <h4>Golazo photography</h4>
-                <div className="icons">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                 
-                </div>
-                <p className="/gallery">View more</p>
-
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-content">
-            <h2>Food and Catering</h2>
-            <div>
-              <img src="\images\exceed-food.png" alt="food"/>
-              <h4>Exceed catering</h4>
-              <div className="icons">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                </div>
-              
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-content">
-            <h2>Decoration</h2>
-            <div>
-              <img src="\images\icandyUg.png" alt="decoration"/>
-              <h4>iCandy Ug</h4>
-              <div className="icons">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                </div>
-              
-              </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-content">
-            <h2>Entertainment</h2>
-            <div>
-              <img src="images\janzi.png" alt="band"/>
-              <h4>Janzi band</h4>
-              <div className="icons">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                </div>
-              
-
-            </div>
-          </div>
-        </div>
-        
-        
-      </div>
-
-    </section>
-
-
-
-
-
-  )
-}
+    </div>
+  );
+};
 
 export default Services;

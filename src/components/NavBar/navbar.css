@@ -1,31 +1,63 @@
-.topnav {
-    overflow: hidden;
-    background-color:#0b4747;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-  }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b4747;
+  padding: 10px 40px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  height: 80px;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 24px;
   
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 20px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    color: #ffcc00;
-  }
-  
-  .topnav a:hover {
-    color: #ffffff;
-  }
-  
-  .topnav a.active {
-    
-    color: white;
-  }
-  
-  .topnav-right {
-    float: right;
-  }
+ 
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+
+.nav-item a svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+.nav-item a span {
+  color: #ffcc00;
+}
+
+.navbar-icons {
+  display: flex;
+}
+
+.navbar-icons .nav-item {
+  margin-left: 20px;
+}
+
+
+body {
+  padding-top: 80px;
+}
