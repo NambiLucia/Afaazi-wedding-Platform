@@ -8,6 +8,7 @@ import Footer from "./components/Footer/index";
 import NotFound from "./components/Notfound/notfound"
 import BookingPage from "./components/BookingPage/BookingPage";
 import Gallery from "./components/Gallery";
+import Services from "./components/Services";
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/bookingpage"element={<BookingPage />} />
           <Route exact path="*" element={<NotFound />} />
           <Route exact path="/gallery" element={<Gallery />} />
+          <Route exact path="/services" element={<Services />} />
         </Routes>
         <Footer />
       </Router>
