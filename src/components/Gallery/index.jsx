@@ -4,21 +4,37 @@ import './gallery.css';
 
 function Gallery () {
   const imageNames = [
-    "zziwa.png",
-    "strat2x.png",
-    "icandyUg.png",
-    "janzi.png",
-    "mona.png",
-    "fenon.png",
-    "ashton.png",
-    "baraka.png",
-    "baye.jpg",
-    "blog1.png",
-    "dalausi.png",
-    "skyz.png",
-    "tents.png",
-    "Emcee.png",
-    "exceed-food.png",
+    "side1.png",
+    "tile1.png",
+    "tile2.png",
+    "tile3.png",
+    "side2.png",
+    "side3.png",
+    "tile4.png",
+    "tile5.png",
+    "tile6.png",
+    "tunnel.png",
+    "side4.png",
+    "tile7.png",
+    "tile8.png",
+    "tile9.png",
+    "side5.png",
+    "side6.png",
+    "tile10.png",
+    "tile11.png",
+    "tile12.png",
+    "side7.png",
+    "side10.png",
+    "tile13.png",
+    "tile14.png",
+    "tile15.png",
+    "side8x.png",
+    "side9.png",
+    "tile16.png",
+    "tile17.png",
+    "tile18.png",
+    "tile19.png",
+    
     
   ];
 
@@ -33,7 +49,7 @@ function Gallery () {
           </div>
         ))}
       </div>
-      <a href="/bookingpage" className="register-button"><button>Register</button></a>
+      <a href="/bookingpage" ><button className="register-button">Register</button></a>
     </div>
   );
 }
