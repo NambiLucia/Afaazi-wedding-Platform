@@ -5,34 +5,34 @@ import "./services.css";
 function Services () {
   const servicesData = [
     {
-      image: "/images/brides.png",
-      title: "Wedding Planning Services",
-      description: "Description",
+      image: "/images/photography.png",
+      title: "Photography & Videography Services",
+      description: "Golazo Photography",
     },
     {
       image: "/images/ashton.png",
-      title: "Corporate Event Services",
-      description: "Description",
+      title: "Decoration Services",
+      description: "iCandy Ug",
     },
     {
-      image: "/images/baraka.png",
-      title: "Birthday Party Services",
-      description: "Description",
+      image: "/images/food.png",
+      title: "Food & Catering Services",
+      description: "Exceed Catering",
     },
     {
-      image: "/images/brides.png",
-      title: "Concert & Music Event ",
-      description: "Description",
+      image: "/images/makeup.png",
+      title: "Hair & Make-up Services",
+      description: "Mona Faces",
     },
     {
-      image: "/images/baraka.png",
-      title: "Exhibition and Trade Show",
-      description: "Description",
+      image: "/images/executive.png",
+      title: "Car hire Serivices",
+      description: "Executive Car hire",
     },
     {
-      image: "/images/brides.png",
-      title: "Festival and Cultural Event ",
-      description: "Description",
+      image: "/images/ivuga.png",
+      title: "Music / Entertainment Services",
+      description: "Ivuga Band",
     },
    
    
