@@ -49,7 +49,6 @@ function Gallery () {
           </div>
         ))}
       </div>
-      <a href="/bookingpage" ><button className="register-button">Register</button></a>
     </div>
   );
 }

@@ -33,7 +33,7 @@ function Services () {
       image: "/images/ivuga.png",
       title: "Music / Entertainment Services",
       description: "Ivuga Band",
-    },
+    }
    
    
   ];

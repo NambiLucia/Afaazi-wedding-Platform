@@ -1,4 +1,4 @@
-/* gallery */
+
     .vendors-gallery{
         display: flex;
         flex-wrap: wrap;
@@ -9,7 +9,7 @@
         height: 750px;
   }
   
-  /*creating vendors card*/
+ 
   
   .vendors-card-container {
     display: flex;
@@ -56,4 +56,6 @@
     font-size: 15px;
     text-align: center;
   }
-  
+h2{
+  font-size: 2rem;
+}
