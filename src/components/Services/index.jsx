@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./services.css";
+import NavBar from "../NavBar";
 
 function Services () {
   const servicesData = [
@@ -26,7 +27,7 @@ function Services () {
     },
     {
       image: "/images/executive.png",
-      title: "Car hire Serivices",
+      title: "Car hire Services",
       description: "Executive Car hire",
     },
     {
@@ -39,7 +40,10 @@ function Services () {
   ];
 
   return (
+    
     <div className="services-container">
+        <NavBar />
+       
       <h1 className="title">Afaazi Services</h1>
       <p className="subtitle">Explore our Services!</p>
       <div className="card-container">

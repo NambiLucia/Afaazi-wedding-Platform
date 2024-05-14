@@ -1,5 +1,6 @@
 import React from 'react';
 import './gallery.css';
+import NavBar from '../NavBar';
 
 
 function Gallery () {
@@ -41,6 +42,7 @@ function Gallery () {
   return (
    
     <div className="gallery-container">
+        <NavBar />
       <h1 className="gallery-title">Afaazi Gallery</h1>
       <div className="gallery">
         {imageNames.map((imageName, index) => (
