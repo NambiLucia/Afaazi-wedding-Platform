@@ -4,7 +4,7 @@ import Footer from "../Footer";
 import RegisterForm from "./RegisterForm";
 import "./register.css"
 
-const Register = () => {
+function Register ()  {
     return (
         <>
             <NavBar />

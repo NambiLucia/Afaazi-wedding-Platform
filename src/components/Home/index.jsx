@@ -21,8 +21,6 @@ function Home () {
         <Vendors />
         <Packages />
         <Contact />
-        <Bookingpage />
-        <Login />
         <Footer />
 </>
         
