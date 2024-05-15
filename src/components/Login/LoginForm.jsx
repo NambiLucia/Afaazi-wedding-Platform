@@ -11,7 +11,26 @@ const LoginForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         {email.length===0 || password.length===0? setErrorMessage("This is required") : ""}
-        fetch("http://localhost:1337/api/auth/local")
+        fetch("http://localhost:1337/api/auth/local",{
+            method:"POST",
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify({identifier:email,
+                password:password
+            })
+        })
+        .then((response) => {
+            if(!response.ok) {
+                throw new error("login failed")
+
+            }
+            return response.json()
+        })
+        .then((data) => {
+            console.log("Login successful",data)
+        })
+        .catch((error) =>{
+            setErrorMessage("theres an error")
+        })
 
 
 

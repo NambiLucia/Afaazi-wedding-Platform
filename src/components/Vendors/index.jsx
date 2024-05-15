@@ -6,7 +6,7 @@ function Vendors () {
     <section id="vendors" className="vendors-gallery">
 
       <div className="vendors-header">
-       <h2>TRENDING VENDORS</h2>
+       <h2 >TRENDING VENDORS</h2>
       </div>
         
       <div className="vendors-card-container">

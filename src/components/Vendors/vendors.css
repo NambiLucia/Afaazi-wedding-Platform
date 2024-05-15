@@ -56,6 +56,6 @@
     font-size: 15px;
     text-align: center;
   }
-h2{
-  font-size: 2rem;
-}
+  .vendors-header h2{
+    font-size: 2rem;
+  }
