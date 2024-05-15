@@ -1,134 +1,69 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
+import './register.css';
 
-const RegisterForm = ({ title, type }) => {
-  const [organisationName, setOrganisationName] = useState("");
-  const [volunteerName, setVolunteerName] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [checkbox, setCheckbox] = useState("");
-  const registerUrl = type === "organisation" ? "http://localhost:1337/api/organisation-accounts" : "http://localhost:1337/api/volunteer-accounts";
-  const [successMessage, setSuccessMessage] = useState("");
-  const navigateHomepage = useNavigate();
+function RegisterForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    contactNumber: '',
+    location: '',
+    gender: '',
+    dob: '',
+  });
 
-  const handleRegister = (event) => {
-    event.preventDefault();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    fetch(registerUrl, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        "data": {
-          organisation_name: organisationName,
-          full_name: volunteerName,
-          contact_number: contactNumber,
-          email_address: email,
-          password: password,
-        },
-      }),
-    }).then(response => {
-      if (response.ok) {
-        setSuccessMessage("You successfully created an Account");
-        navigateHomepage("/");
-      }
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Store form data in local storage
+    localStorage.setItem('userData', JSON.stringify(formData));
+    alert('Registration Successful!');
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <div className="organizationContainerWrapper">
-        <div className="rightContainer">
-          <div className="signUpContainer">
-            <h3>{title}</h3>
-            {type === "organisation" ? (
-              <div className="inputBox">
-                <input
-                  type="text"
-                  name="organisationName"
-                  placeholder="Organisation Name"
-                  onChange={(event) => setOrganisationName(event.target.value)}
-                  required
-                />
-              </div>
-            ) : (
-              <div className="inputBox">
-                <input
-                  type="text"
-                  name="volunteerName"
-                  placeholder="Full Name"
-                  onChange={(event) => setVolunteerName(event.target.value)}
-                  required
-                />
-              </div>
-            )}
-            <div className="inputBox">
-              <input
-                type="text"
-                name="contactNumber"
-                placeholder="Contact Number"
-                onChange={(event) => setContactNumber(event.target.value)}
-                required
-              />
-            </div>
-            <div className="inputBox">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email address"
-                onChange={(event) => setEmail(event.target.value)}
-                required
-              />
-            </div>
-            <div className="inputBox">
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={(event) => setPassword(event.target.value)}
-                required
-              />
-            </div>
-            <div className="inputBox">
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Re Enter Password"
-                onChange={(event) => setConfirmPassword(event.target.value)}
-                required
-              />
-            </div>
-            <div className="agreeCheckbox">
-              <input
-                type="checkbox"
-                name="checkbox"
-                onChange={(event) => setCheckbox(event.target.value)}
-                required
-              />
-              <p>
-                I agree with <a>Terms</a> and <a>Privacy</a>
-              </p>
-            </div>
-            <div className="buttonContainer">
-              <button
-                type="submit"
-                className="signUpButton orgbutton"
-              >
-                SIGN UP
-              </button>
-            </div>
-            <p className="success">{successMessage}</p>
-            <p className="accountExists">
-              Already have an account? <a href="/login">Log In</a>
-            </p>
-          </div>
+    <div className="registration-form">
+      <h1>Registration Form</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Name:</label>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
         </div>
+        <div className="form-group">
+          <label>Email:</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+        </div>
+        <div className="form-group">
+          <label>Contact Number:</label>
+          <input type="tel" name="contactNumber" value={formData.contactNumber} onChange={handleChange} required />
+        </div>
+        <div className="form-group">
+          <label>Location:</label>
+          <input type="text" name="location" value={formData.location} onChange={handleChange} required />
+        </div>
+        <div className="form-group">
+          <label>Gender:</label>
+          <select name="gender" value={formData.gender} onChange={handleChange} required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label>Date of Birth:</label>
+          <input type="date" name="dob" value={formData.dob} onChange={handleChange} required />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <div className="login-link">
+        <p>Already have an account? <Link to="/login">Login</Link></p>
       </div>
-    </form>
+    </div>
   );
-};
+}
 
 export default RegisterForm;

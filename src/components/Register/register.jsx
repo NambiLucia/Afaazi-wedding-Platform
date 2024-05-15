@@ -8,7 +8,7 @@ function Register ()  {
     return (
         <>
             <NavBar />
-            <RegisterForm title="Vendors Account" type="Vendors" />
+            <RegisterForm  />
             <Footer />
         </>
     )

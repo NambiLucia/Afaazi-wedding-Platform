@@ -1,21 +1,35 @@
 import React, { useState } from 'react';
-import './BookingPage'
+import './eventlist.css';
 
 function EventList({ events }) {
   const [showTable, setShowTable] = useState(true);
+  const [isSaving, setIsSaving] = useState(false); 
 
-  const handleEdit = (index) => {
-    // Handle edit functionality here
+  const handleEdit = (index, eventData) => {
     console.log("Edit event at index:", index);
+    handleSave(index, eventData);
   };
 
   const handleDelete = (index) => {
-    // Handle delete functionality here
     console.log("Delete event at index:", index);
+    const updatedEvents = events.filter((_, i) => i !== index);
+    localStorage.setItem('events', JSON.stringify(updatedEvents));
+  };
+
+  const handleSave = (index, eventData) => {
+    setIsSaving(true);
+    const savedEvents = JSON.parse(localStorage.getItem('events')) || [];
+    savedEvents[index] = eventData;
+    localStorage.setItem('events', JSON.stringify(savedEvents));
+    setTimeout(() => {
+      setIsSaving(false);
+      console.log("Event saved!");
+      document.getElementById('download-button').scrollIntoView({ behavior: 'smooth' });
+    }, 1500);
   };
 
   return (
-    <div>
+    <div className="event-list-container">
       {showTable ? (
         <div>
           <button onClick={() => setShowTable(false)}>Close All Booking</button>
@@ -52,15 +66,18 @@ function EventList({ events }) {
                   </tbody>
                 </table>
                 <div>
-                  <button className="edit-button" onClick={() => handleEdit(index)}>Edit</button>
+                  <button className="edit-button" onClick={() => handleEdit(index, event)}>Edit</button>
                   <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button>
+                  <button className="save-button" style={{ color: 'blue' }} onClick={() => handleSave(index, event)} disabled={isSaving}>
+                    {isSaving ? 'Saving...' : 'Save'}
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       ) : (
-        <button onClick={() => setShowTable(true)}>Booking List</button>
+        <button onClick={() => setShowTable(true)}>View List</button>
       )}
     </div>
   );

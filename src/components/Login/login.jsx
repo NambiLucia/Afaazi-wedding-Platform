@@ -9,7 +9,7 @@ function Login () {
     return (
         <> 
         
-            <LoginForm title="Create An Events Account" type="organisation" />
+            <LoginForm title="Create An Events Account"/>
             <Footer />
         </>
 
