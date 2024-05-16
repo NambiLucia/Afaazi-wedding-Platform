@@ -1,26 +1,30 @@
-/* Booking Page styles */
+
 .book-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 20px; 
+}
+.booking-title{
+    text-align: center;
+
 }
 
 .book-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 400px; 
 }
 
 .book,
 .event-form-section {
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 20px; 
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 
 .book-card {
     background-color: #f9f9f9;
@@ -35,14 +39,14 @@
     margin-bottom: 10px;
 }
 
-/* Form styles */
+
 .form-control {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 15px;
-    font-size: 26px;
+    font-size: 16px; 
 }
 
 .btn {
@@ -58,4 +62,12 @@
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+
+
+@media (max-width: 768px) {
+    .book-content {
+        max-width: 300px; 
+    }
 }

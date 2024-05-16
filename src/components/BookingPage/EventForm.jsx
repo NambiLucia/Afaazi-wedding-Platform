@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './BookingPage';
 import EventList from './EventList';
+import '../BookingPage/eventform.css'
 
 function EventForm() {
   const [eventName, setEventName] = useState('');

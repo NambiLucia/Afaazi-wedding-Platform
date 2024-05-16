@@ -1,52 +1,81 @@
-import React from 'react'
-import {useEffect, useState} from 'react';
 
-function LoginForm ({title, type}) {
-    const[organisation, setOrganisation] = useState([])
-    let apiUrl = "http://localhost:1337/api/organisations?populate=*"
-  
-    useEffect(()=>{
-        async function getData(){
-            try {
-                const responseData = await fetch(apiUrl)
-                if (responseData){
-                    const jsonData = await responseData.json()
-                    setOrganisation(jsonData)
-                }  
-                
-            } catch (error) {
-                
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './LoginForm.css';
+
+const LoginForm = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage,setErrorMessage]=useState('');
+   
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+       if(email && password) {
+        let apiUrl="http://localhost:1337/api/logins";
+        let newLogin={ 
+            method:"POST",
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify(
+                {data:{email,password}}
+            )}
+       }
+
+  fetch("http://localhost:1337/api/logins", newLogin)
+        .then((response) => {
+            if(!response.ok) {
+                throw new error("login failed")
+
             }
-        }
-    },[])
-    const handleLogin = () => {
-        console.log("click")
-    }
+            return response.json()
+        })
+        .then((data) => {
+            console.log("Login successful",data)
+            setEmail("")
+            setPassword("")
+        })
+        .catch((error) =>{
+            console.error("Error:", error);
+        })
+
+
+
+
+    }// end of function
+      
 
     return (
-        <form onSubmit={handleLogin}>
-            <div className="organizationContainerWrapper">
-                <div className="rightContainer">
-                    <div className="loginContainer">
-                        <h3>Join the Afaazi Family</h3>
-                        <div className="inputBox">
-                            <input type="email" placeholder="Email address" required />
-                        </div>
-                        <div className="inputBox">
-                            <input type="password" placeholder="Password" required />
-                        </div>
-                        <div className="buttonContainer">
-                            <button type="submit" className="loginButton orgbutton">
-                                SIGN IN
-                            </button>
-                        </div>
-                        <p className="accountExists">Do not have an account? <a href="/register/SignUpForm">Sign Up</a></p>
-                    </div>
+        <div className="loginformcontainer">
+            <form onSubmit={handleSubmit}>
+                <h2>Login to Afaazi</h2>
+                <div className="form-group">
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
                 </div>
+                <div className="form-group">
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            {errorMessage && <div className="error-message">{errorMessage}</div>}
+            <div className="signup-option">
+                <p>Don't have an account? <Link to="/register/SignUpForm">Sign Up</Link></p>
             </div>
-
-        </form>
-    )
-}
+        </div>
+    );
+};
 
 export default LoginForm;

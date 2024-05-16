@@ -1,4 +1,4 @@
 # React + Vite
 
-This is a wedding booking platform created using react js,strapi
+This is a wedding booking platform created using react js,strapi,postman
 
