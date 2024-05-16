@@ -1,4 +1,4 @@
-// LoginForm.jsc
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginForm.css';
@@ -6,18 +6,22 @@ import './LoginForm.css';
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage,setErrorMessage]=useState('');
+   
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        {email.length===0 || password.length===0? setErrorMessage("This is required") : ""}
-        fetch("http://localhost:1337/api/auth/local",{
+       if(email && password) {
+        let apiUrl="http://localhost:1337/api/logins";
+        let newLogin={ 
             method:"POST",
             headers:{"content-type":"application/json"},
-            body:JSON.stringify({identifier:email,
-                password:password
-            })
-        })
+            body:JSON.stringify(
+                {data:{email,password}}
+            )}
+       }
+
+  fetch("http://localhost:1337/api/logins", newLogin)
         .then((response) => {
             if(!response.ok) {
                 throw new error("login failed")
@@ -27,25 +31,18 @@ const LoginForm = () => {
         })
         .then((data) => {
             console.log("Login successful",data)
+            setEmail("")
+            setPassword("")
         })
         .catch((error) =>{
-            setErrorMessage("theres an error")
+            console.error("Error:", error);
         })
 
 
 
 
-        /* Retrieve stored user data from local storage
-        const storedEmail = localStorage.getItem('email');
-        const storedPassword = localStorage.getItem('password');
-
-        if (email === storedEmail && password === storedPassword) {
-            alert('Login successful!');
-            // Redirect to another page or perform further actions
-        } else {
-            setErrorMessage('Invalid email or password. Please try again.');
-        }*/
-    };
+    }// end of function
+      
 
     return (
         <div className="loginformcontainer">

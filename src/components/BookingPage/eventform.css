@@ -1,4 +1,4 @@
-/* Event Form Styles */
+
 .event-form {
   max-width: 400px; 
   margin: 0rem auto; 
@@ -11,13 +11,13 @@
   align-items: center;
 }
 
-/* Form Group Styles */
+
 .form-group {
   width: 100%;
   margin-bottom: 0%; 
 }
 
-/* Label Styles */
+
 label {
   font-weight: bold;
   font-size: 0.7rem;
@@ -25,7 +25,7 @@ label {
   color: #007bff(0, 56%, 31%);
 }
 
-/* Input Styles */
+
 input[type="text"],
 input[type="date"],
 input[type="number"],
@@ -52,14 +52,13 @@ select:focus {
   border-color: #5c8df6;
 }
 
-/* Error Message Styles */
+
 .error {
   color: #ff4d4f;
   font-size: 0.8rem; 
   margin-top: 0.3rem;
 }
 
-/* Button Styles */
 button[type="submit"] {
   padding: 0.4rem 1.1rem;
   font-size: 0.9rem;
