@@ -6,43 +6,39 @@ import './LoginForm.css';
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage,setErrorMessage]=useState('');
+   
    
 
     const handleSubmit = (event) => {
         event.preventDefault();
-       if(email && password) {
+        if(email && password) { 
         let apiUrl="http://localhost:1337/api/logins";
-        let newLogin={ 
+    
+        let newLoginObj={ 
             method:"POST",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(
                 {data:{email,password}}
-            )}
-       }
+            )};
 
-  fetch("http://localhost:1337/api/logins", newLogin)
-        .then((response) => {
-            if(!response.ok) {
-                throw new error("login failed")
-
-            }
+  fetch(apiUrl, newLoginObj)
+ .then((response) => {
+            
             return response.json()
         })
-        .then((data) => {
+
+.then((data) => {
             console.log("Login successful",data)
             setEmail("")
             setPassword("")
         })
-        .catch((error) =>{
-            console.error("Error:", error);
-        })
+
+       } else{alert("Logins missing")}
 
 
+    }
 
-
-    }// end of function
-      
+ 
 
     return (
         <div className="loginformcontainer">
@@ -68,9 +64,9 @@ const LoginForm = () => {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" onClick={handleSubmit}>Login</button>
             </form>
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
+           
             <div className="signup-option">
                 <p>Don't have an account? <Link to="/register/SignUpForm">Sign Up</Link></p>
             </div>

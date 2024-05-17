@@ -7,7 +7,7 @@ function Services () {
   const servicesData = [
     {
       image: "/images/photography.png",
-      title: "Photography & Videography Services",
+      title: "Photography Services",
       description: "Golazo Photography",
     },
     {
@@ -17,12 +17,12 @@ function Services () {
     },
     {
       image: "/images/food.png",
-      title: "Food & Catering Services",
+      title: "Catering Services",
       description: "Exceed Catering",
     },
     {
       image: "/images/makeup.png",
-      title: "Hair & Make-up Services",
+      title: "Make-up Services",
       description: "Mona Faces",
     },
     {
