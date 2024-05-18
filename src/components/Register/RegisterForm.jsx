@@ -61,6 +61,7 @@ function RegisterForm() {
   };
 
   return (
+    <section className="register-section">
     <div className="registration-form">
       <h1>Registration Form</h1>
       <form onSubmit={handleSubmit}>
@@ -140,6 +141,8 @@ function RegisterForm() {
       </div>
 
     </div>
+
+    </section>
   );
 }
 

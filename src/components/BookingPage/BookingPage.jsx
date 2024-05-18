@@ -9,10 +9,10 @@ function BookingPage() {
   };
 
   return (
+
     <div className="booking-page">
       <NavBar />
 
-      
       <main className="booking-content">
         <section className="providers">
           <div className="booking-card">
@@ -25,6 +25,7 @@ function BookingPage() {
       </main>
       
     </div>
+
   );
 }
 

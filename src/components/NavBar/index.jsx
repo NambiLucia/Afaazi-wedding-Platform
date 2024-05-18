@@ -13,8 +13,13 @@ import "./navbar.css";
 function NavBar() {
   return (
     <nav className="navbar">
+     <a href="/"> <img className="logo"
+              src="\android-chrome-192x192.png"
+              alt="logo"
+            /> </a>
       
       <ul className="navbar-nav">
+      
         <li className="nav-item">
           <a href="/">
             <FaHome />

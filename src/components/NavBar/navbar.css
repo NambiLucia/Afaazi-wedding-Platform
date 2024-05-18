@@ -57,7 +57,10 @@
   margin-left: 20px;
 }
 
-
+.logo{
+  width:200px;
+  height:110px;
+}
 body {
   padding-top: 80px;
 }

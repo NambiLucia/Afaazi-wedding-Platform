@@ -1,14 +1,25 @@
 
+
+section{
+  background-image: url("/public/images/bw2.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-attachment: fixed;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 .loginformcontainer {
     max-width: 400px;
-    margin: 100px auto;
+    margin:auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0.8;
-
-    
+   
   }
   
   h2 {

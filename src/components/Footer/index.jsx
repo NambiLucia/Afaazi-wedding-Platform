@@ -25,9 +25,9 @@ function Footer() {
         <div className="contact-info">
           <h3>Contact Us</h3>
           <ul>
-            <li><FaMapMarkerAlt /> 123 Wedding Avenue, City, Country</li>
+            <li><FaMapMarkerAlt /> Innovation Village, Ntinda, Kampala,Uganda</li>
             <li><FaPhone /> +123456789</li>
-            <li><FaEnvelope /> info@example.com</li>
+            <li><FaEnvelope /> afaazi@gmail.com</li>
           </ul>
         </div>
       </div>
