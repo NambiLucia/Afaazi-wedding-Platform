@@ -41,6 +41,8 @@ const LoginForm = () => {
  
 
     return (
+
+      
         <div className="loginformcontainer">
             <form onSubmit={handleSubmit}>
                 <h2>Login to Afaazi</h2>
@@ -71,6 +73,9 @@ const LoginForm = () => {
                 <p>Don't have an account? <Link to="/register/SignUpForm">Sign Up</Link></p>
             </div>
         </div>
+
+
+
     );
 };
 
