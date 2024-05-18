@@ -1,23 +1,19 @@
 import React from "react";
-import Footer from "../Footer"
-import LoginForm from "./LoginForm"
-import "./login.css"
+import Footer from "../Footer";
+import LoginForm from "./LoginForm";
+import "./login.css";
 import NavBar from "../NavBar";
 
+function Login() {
+  return (
 
-
-
-function Login () {
-    return (
-        <> 
+      <section>
         <NavBar />
-        
-            <LoginForm />
-            <Footer />
-        </>
-
-
-    )
+        <LoginForm />
+        <Footer />
+      </section>
+    
+  );
 }
 
 export default Login;

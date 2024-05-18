@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./contact.css";
+import NavBar from "../NavBar";
 
 
 
@@ -12,7 +13,7 @@ function Contact() {
         subscribe: false
     });
 
-    // Load saved data from localStorage on component mount
+   
     useEffect(() => {
         const savedFormData = JSON.parse(localStorage.getItem("formData"));
         if (savedFormData) {
@@ -20,7 +21,6 @@ function Contact() {
         }
     }, []);
 
-    // Update form data on input change
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
         const newValue = type === "checkbox" ? checked : value;
@@ -30,18 +30,16 @@ function Contact() {
         }));
     };
 
-    // Save form data to localStorage
+  
     useEffect(() => {
         localStorage.setItem("formData", JSON.stringify(formData));
     }, [formData]);
 
-    // Handle form submission
+ 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your submission logic here
-        // For example, you can send the form data to a server
+       
         console.log("Form submitted:", formData);
-        // Reset form after submission
         setFormData({
             name: "",
             email: "",
@@ -52,57 +50,69 @@ function Contact() {
     };
 
     return (
-        <section id="contact" className="contact_us">
-            <div className="contain">
-                <div className="header-wrapper">
-                    <div className="contact-form-container">
-                        <h4>GET IN TOUCH</h4>
+       
+        <section id="contact" className="contact_us">   
+         <NavBar />
+               
+        <div className="contain">
+                  <div className="contact-form-container">
+                  <h1>GET IN TOUCH</h1>
                         <h2 className="form-headline">Send us a message</h2>
-                        <form id="submit-form" onSubmit={handleSubmit} className="contact-form">
-                            <p>
-                                <input
-                                    id="name"
-                                    className="contact-form-input"
-                                    type="text"
-                                    placeholder="Your Name*"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                                <small className="name-error"></small>
-                            </p>
-                            {/* Repeat similar input fields for email, company name, message, and checkbox */}
-                            <p className="full-width">
-                                <input type="submit" className="submit-btn" value="Submit" />
-                                <button type="button" className="reset-btn" onClick={() => setFormData({
-                                    name: "",
-                                    email: "",
-                                    companyName: "",
-                                    message: "",
-                                    subscribe: false
-                                })}>Reset</button>
-                            </p>
-                        </form>
-                    </div>
-
-                    {/* Add your contact information */}
-                    <div className="contacts contact-wrapper">
-                        <ul>
-                            <li>content 1 <span className="highlight-text-grey">content 2</span> content 3</li>
-                            <span className="highlight-contact-info">
-                                <li className="email-info"><i className="fa fa-envelope" aria-hidden="true"></i> afaazievents.com</li>
-                                <li><i className="fa fa-phone" aria-hidden="true"></i> <span className="highlight-text">+256 111 111 111</span></li>
-                                <li><i className="fa fa-phone" aria-hidden="true"></i> <span className="highlight-text">+256 111 111 111</span></li>
-                            </span>
+                      <form id="submit-form" action="" className="contact-form">
+                        <p>
+                            <input id="name" className="contact-form-input" type="text" placeholder="Your Name*" />
+                            <small className="name-error"></small>
+                        </p>
+                        <p>
+                            <input id="email" className="contact-form-input" type="email" placeholder="Your Email*" />
+                            <small className="name-error"></small>
+                        </p>
+                        <p className="full-width">
+                            <input id="company-name" className="contact-form-input" type="text" placeholder="Company Name*" required />
+                            <small></small>
+                        </p>
+                        <p className="full-width">
+                            <textarea className="contact-textarea" minlength="20" id="message" cols="30" rows="7" placeholder="Your Message*" required></textarea>
+                            <small></small>
+                        </p>
+                        <p className="full-width">
+                            <input type="checkbox" id="checkbox" name="checkbox" checked /> I agree to the processing of my personal data for feedback analysis.
+                        </p>
+                        <p className="full-width">
+                            <input type="submit" className="submit-btn" value="Submit" />
+                            <button className="reset-btn">Reset</button>
+                        </p>
+                      </form>
+                  </div>
+                
+                    <div class="contacts">
+                        <ul class ="list">
+                            <h1><strong>Contact Information</strong></h1>
+                            <li>
+                           
+                                 <i className="fas fa-map-marker-alt"></i> Address:  
+                                <span className="highlight-text-grey">Innovation Village,</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-home" aria-hidden="true"></i> Location: 
+                                <span className="highlight-text-grey">Kampala, Uganda</span>
+                            </li>
+                             <li>
+                                <i className="fas fa-envelope"></i> Email: 
+                                <a href="mailto:afaazi@gmail.com" className="highlight-text">afaazi@gmail.com</a>
+                            </li>
+                            <li>
+                                <i className="fas fa-phone"></i>  Phone:             
+                                <span className="highlight-text-grey">  +256 759 247 179</span>
+                            </li>
+                            
                         </ul>
-                    </div>
-                </div>
-                {/* Include your side image */}
-                <img src="\images\baye.jpg" alt="Image 1" />
-            </div>
-        </section>
-    );
+                        <img class="pic" src="\images\mona.png" alt="mona"/>
+                    </div>   
+                </div>    
+        
+    </section>
+)
 }
 
 export default Contact;
