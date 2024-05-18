@@ -8,14 +8,17 @@ Afaazi Events is a centralized system designed to manage all aspects of booking 
 1. User Registration: Simple and quick registration process for new users.
 2. Service provider display: Browse and choose from a variety of wedding service providers displayed.
 3. Reservation / Booking: Make wedding reservation while specifying details such as budget,wedding venue,dates and type of wedding. 
-4. Streamlined Process: An easy-to-use interface that simplifies the process of planning and booking wedding services.
+4. Streamlined Process: An easy-to-use interface that simplifies the process of planning and booking wedding service providers.
 
 # Getting Started
 ## Prerequisites
 To run this project, you will need:
 - A code editor, such as VS Code.
-- Node.js installed on your machine.
+- React + Vite
 - Basic knowledge of React and REST APIs.
+- Postman
+- Node.js installed on your machine.
+
 
 # Installation
 Clone the repository
@@ -24,8 +27,8 @@ Clone the repository
 Ensure you have a backend service running to handle API requests. In our case, we used **Strapi**.
 
 # API Endpoints
-User Registration:
-user Logins: GET (http://localhost:1337/api/logins)
+- User Registration:
+- User Logins: GET (http://localhost:1337/api/logins)
 
 ## API testing
 We used **Postman**
