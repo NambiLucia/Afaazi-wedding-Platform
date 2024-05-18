@@ -41,8 +41,8 @@ const LoginForm = () => {
  
 
     return (
+        <section>
 
-      
         <div className="loginformcontainer">
             <form onSubmit={handleSubmit}>
                 <h2>Login to Afaazi</h2>
@@ -74,7 +74,7 @@ const LoginForm = () => {
             </div>
         </div>
 
-
+</section>
 
     );
 };

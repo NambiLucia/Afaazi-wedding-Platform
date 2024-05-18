@@ -168,7 +168,8 @@ function EventForm() {
         </div>
         <button type="submit">Add Event</button>
       </form>
-      <EventList events={events} /></>
+      <EventList events={events} />
+      </>
 
   );
 }
