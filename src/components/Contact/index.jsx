@@ -53,9 +53,12 @@ function Contact() {
        
         <section id="contact" className="contact_us">   
          <NavBar />
-               
+       
         <div className="contain">
+            
                   <div className="contact-form-container">
+
+                    
                   <h1>GET IN TOUCH</h1>
                         <h2 className="form-headline">Send us a message</h2>
                       <form id="submit-form" action="" className="contact-form">

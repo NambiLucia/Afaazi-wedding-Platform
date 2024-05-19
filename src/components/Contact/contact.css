@@ -9,6 +9,7 @@
     height: 750px; 
     margin-bottom: 10rem;      
 }
+
 .contain {
 
      display: flex;
@@ -27,7 +28,6 @@ div.contact-form-container {
     height: 600px;
     transition: transform 0.3s ease; 
     width: 40%;
-    margin-top: 40px;
     border-radius: 10px;
     border: 1px solid #ddd;
     transition: transform 0.3s ease; 
@@ -45,7 +45,7 @@ div.contact-form-container {
     padding: 10px;
     height: 600px;
     margin-bottom: 20px;
-    margin-top: 40px;
+    margin-top: 8px;
     border-radius: 10px;
     transition: transform 0.3s ease; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 

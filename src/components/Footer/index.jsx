@@ -26,7 +26,7 @@ function Footer() {
           <h3>Contact Us</h3>
           <ul>
             <li><FaMapMarkerAlt /> Innovation Village, Ntinda, Kampala,Uganda</li>
-            <li><FaPhone /> +123456789</li>
+            <li><FaPhone /> +256 759 247 179</li>
             <li><FaEnvelope /> afaazi@gmail.com</li>
           </ul>
         </div>
