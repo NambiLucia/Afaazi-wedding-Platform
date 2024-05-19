@@ -5,10 +5,18 @@ Afaazi Events is a centralized system designed to manage all aspects of booking 
 ![alt text](/public/images/Afaazi-image.png)
 
 ## Features
-1. User Registration: Simple and quick registration process for new users.
-2. Service provider display: Browse and choose from a variety of wedding service providers displayed.
-3. Reservation / Booking: Make wedding reservation while specifying details such as budget,wedding venue,dates and type of wedding. 
-4. Streamlined Process: An easy-to-use interface that simplifies the process of planning and booking wedding service providers.
+1. ### Vendor Selection: 
+- Curated list of reliable and reputable vendors
+2.  ### Simplified Booking Process:
+- Streamlined booking through the platform
+- Reduction in time-consuming phone calls, emails, and negotiations
+
+3.  ### Enhanced Vendor Reach: 
+- Wider audience reach for vendors
+- Effective service showcase for vendors
+ 
+4. ### Budget Management Process: 
+- An easy-to-use interface that simplifies the process of planning and booking wedding service providers.
 
 # Getting Started
 ## Prerequisites
@@ -27,7 +35,7 @@ Clone the repository
 Ensure you have a backend service running to handle API requests. In our case, we used **Strapi**.
 
 # API Endpoints
-- User Registration:
+- User Booking:
 - User Logins: GET (http://localhost:1337/api/logins)
 
 ## API testing
