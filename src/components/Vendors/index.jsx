@@ -18,8 +18,9 @@ function Vendors () {
               <img src="\images\mona.png" alt="mona"/>
 
             </div>
-            <p>Kisementi Kampala</p>
+            <p>Kisementi Kampala <strong>2M-4.5M</strong></p>
             <h2>Mona Faces</h2>
+           
             
           </div>
         </div>
@@ -29,7 +30,7 @@ function Vendors () {
             <img src="\images\zziwa.png" alt="mona"/>
 
             </div>
-              <p>Kisementi Kampala</p>
+              <p>Kisementi Kampala <strong>2M-4.5M</strong></p>
             <h2>Hair by Zziwa</h2>
           
           </div>
@@ -40,7 +41,7 @@ function Vendors () {
             <img src="\images\kembabzi.png" alt="mona"/>
 
             </div>
-            <p>Naguru Kampala</p>
+            <p>Naguru Kampala <strong>1M-4M</strong></p>
             <h2>Kembabazi Catering</h2>
             
           </div>
@@ -53,7 +54,7 @@ function Vendors () {
             <img src="\images\ashton.png" alt="mona"/>
 
             </div>
-            <p>Seeta Mukono</p>
+            <p>Seeta Mukono <strong>2M-5M</strong></p>
             <h2>Ashton Events</h2>
           </div>
         </div>
@@ -64,7 +65,7 @@ function Vendors () {
             <img src="\images\executive.png" alt="mona"/>
 
             </div>
-            <p>Kampala</p>
+            <p>Kampala  <strong>2M-6M</strong></p>
             <h2>Executive Rides Ug</h2>
           </div>
         </div>
@@ -75,7 +76,7 @@ function Vendors () {
             <img src="\images\strat2x.png" alt="mona"/>
 
             </div>
-            <p>Bukoto Kampala</p>
+            <p>Bukoto Kampala <strong>2M-8M</strong></p>
             <h2>Strat Bridal</h2>
           </div>
           
