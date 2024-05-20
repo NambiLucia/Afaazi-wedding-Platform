@@ -14,11 +14,12 @@ const LoginForm = () => {
         if(email && password) { 
         let apiUrl="http://localhost:1337/api/logins";
     
-        let newLoginObj={ 
+        let newLoginObj={
             method:"POST",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(
-                {data:{email,password}}
+                {data:{email:email,
+                    password:password}}
             )};
 
   fetch(apiUrl, newLoginObj)
