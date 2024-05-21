@@ -1,177 +1,156 @@
 import React, { useState } from 'react';
-import './BookingPage';
-import EventList from './EventList';
-import '../BookingPage/eventform.css'
+import './eventform.css';
+import axios from 'axios';
 
-function EventForm() {
-  const [eventName, setEventName] = useState('');
-  const [eventDate, setEventDate] = useState('');
-  const [venue, setVenue] = useState('');
-  const [budget, setBudget] = useState('');
-  const [contacts, setContacts] = useState('');
-  const [telephone, setTelephone] = useState('');
-  const [category, setCategory] = useState('');
-  const [formErrors, setFormErrors] = useState({});
-  const [events, setEvents] = useState([]);
+// Connecting front to backend
+axios.get('http://localhost:1337/api')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error('There was an error!', error);
+  });
 
-  const onAddEvent = (newEvent) => {
-    setEvents([...events, newEvent]);
+
+const EventForm = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    contact: '',
+    eventDate: '',
+    eventCheckoutDate: '',
+    eventType: '',
+    country: '',
+    city: '',
+    additionalInfo: '',
+    estimatedBudget: '', 
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: name === 'estimatedBudget' ? formatMoney(value) : value,
+    }));
   };
 
+  const formatMoney = (value) => {
+    // Format value as money (e.g., 100000 -> 100,000)
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'UGX', // Ugandan Shilling currency code
+      minimumFractionDigits: 0,
+    });
+    return formatter.format(value.replace(/\D/g, ''));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      onAddEvent({
-        name: eventName,
-        date: eventDate,
-        venue: venue,
-        budget: budget,
-        contacts: contacts,
-        telephone: telephone,
-        category: category
-      });
-      setEventName('');
-      setEventDate('');
-      setVenue('');
-      setBudget('');
-      setContacts('');
-      setTelephone('');
-      setCategory('');
-      setFormErrors({});
-    }
+    // Save form data to local storage
+    localStorage.setItem('bookingFormData', JSON.stringify(formData));
+    const res = axios.post('http://localhost:1337/content-manager/collection-types/api::booking.booking', formData)
+    
+
+    console.log(res)
+    //alert('Booking Successful! We will get in touch with you shortly.');
+    // Clear form fields
+  //  setFormData({
+    //  fullName: '',
+      //email: '',
+      //contact: '',
+      //eventDate: '',
+      //eventCheckoutDate: '',
+      //eventType: '',
+      //country: '',
+      //city: '',
+      //additionalInfo: '',
+      //estimatedBudget: '', 
+    //});
   };
-
-  const validateForm = () => {
-    const errors = {};
-    let isValid = true;
-
-    if (!eventName.trim()) {
-      errors.eventName = 'Event name is required';
-      isValid = false;
-    }
-
-    if (!eventDate) {
-      errors.eventDate = 'Event date is required';
-      isValid = false;
-    }
-
-    if (!venue.trim()) {
-      errors.venue = 'Venue location is required';
-      isValid = false;
-    }
-
-    if (!budget.trim()) {
-      errors.budget = 'Budget is required';
-      isValid = false;
-    }
-
-    if (!contacts.trim()) {
-      errors.contacts = 'Contacts (email address) is required';
-      isValid = false;
-    }
-
-    if (!telephone.trim()) {
-      errors.telephone = 'Telephone number is required';
-      isValid = false;
-    }
-
-    if (!category.trim()) {
-      errors.category = 'Category is required';
-      isValid = false;
-    }
-
-    setFormErrors(errors);
-    return isValid;
-  };
+  
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="event-form">
-        <div className="form-group">
-          <label htmlFor="eventName">Event Name:</label>
-          <input
-            type="text"
-            id="eventName"
-            value={eventName}
-            onChange={(e) => setEventName(e.target.value)}
-          />
-          {formErrors.eventName && <span className="error">{formErrors.eventName}</span>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="eventDate">Event Date:</label>
-          <input
-            type="date"
-            id="eventDate"
-            value={eventDate}
-            onChange={(e) => setEventDate(e.target.value)}
-          />
-          {formErrors.eventDate && <span className="error">{formErrors.eventDate}</span>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="venue">Venue Location:</label>
-          <select
-            id="venue"
-            value={venue}
-            onChange={(e) => setVenue(e.target.value)}
-          >
-            <option value="">Select a venue</option>
-            <option value="Gardens">Gardens</option>
-            <option value="Hall">Hall</option>
-            <option value="Lake Shores">Lake shores</option>
-          </select>
-          {formErrors.venue && <span className="error">{formErrors.venue}</span>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="budget">Budget (UGX):</label>
-          <input
-            type="number"
-            id="budget"
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-          />
-          {formErrors.budget && <span className="error">{formErrors.budget}</span>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="contacts">Contacts (Email Address):</label>
-          <input
-            type="email"
-            id="contacts"
-            value={contacts}
-            onChange={(e) => setContacts(e.target.value)}
-          />
-          {formErrors.contacts && <span className="error">{formErrors.contacts}</span>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="telephone">Telephone Number:</label>
-          <input
-            type="tel"
-            id="telephone"
-            value={telephone}
-            onChange={(e) => setTelephone(e.target.value)}
-          />
-          {formErrors.telephone && <span className="error">{formErrors.telephone}</span>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="category">Category:</label>
-          <select
-            id="category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="">Select a category</option>
-            <option value="Religious">Religious</option>
-            <option value="Traditional">Traditional</option>
-            <option value="Civil">Civil</option>
-          </select>
-          {formErrors.category && <span className="error">{formErrors.category}</span>}
-        </div>
-        <button type="submit">Add Event</button>
-      </form>
-      <EventList events={events} />
-      </>
-
+    <div className="background-container">
+      <div className="booking-container">
+        <h2 className="form-title">Event Booking Form</h2>
+        <form className="booking-form" onSubmit={handleSubmit}>
+          <div className="form-row">
+            <label>
+              Full Name:
+              <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
+            </label>
+            <label>
+              Email:
+              <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            </label>
+            <label>
+              Contact:
+              <input 
+                type="tel" 
+                name="contact" 
+                value={formData.contact} 
+                onChange={handleChange} 
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                required 
+                title="Please enter a valid phone number (e.g., 123-456-7890)" 
+              />
+            </label>
+          </div>
+          <div className="form-row">
+            <label>
+              Event Date:
+              <input type="date" name="eventDate" value={formData.eventDate} onChange={handleChange} required />
+            </label>
+            <label>
+              Checkout Date:
+              <input type="date" name="eventCheckoutDate" value={formData.eventCheckoutDate} onChange={handleChange} required />
+            </label>
+            <label>
+              Event Type:
+              <select name="eventType" value={formData.eventType} onChange={handleChange} required>
+                <option value="">Select event type</option>
+                <option value="wedding">Wedding</option>
+                <option value="engagement">Engagement</option>
+                <option value="anniversary">Anniversary</option>
+                
+              </select>
+            </label>
+          </div>
+          <div className="form-row">
+            <label>
+              Country:
+              <input type="text" name="country" value={formData.country} onChange={handleChange} required />
+            </label>
+            <label>
+              City:
+              <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+            </label>
+          </div>
+          <div className="form-row">
+            <label>
+              Estimated Budget (UGX):
+              <input 
+                type="text" 
+                name="estimatedBudget" 
+                value={formData.estimatedBudget} 
+                onChange={handleChange} 
+               
+                title="Please enter a valid amount" 
+                required 
+              />
+            </label>
+          </div>
+          <div className="form-row">
+            <label>
+              Additional Information:
+              <textarea name="additionalInfo" value={formData.additionalInfo} onChange={handleChange} />
+            </label>
+          </div>
+          <button type="submit">Book Event</button>
+        </form>
+      </div>
+    </div>
   );
-}
+};
 
 export default EventForm;
