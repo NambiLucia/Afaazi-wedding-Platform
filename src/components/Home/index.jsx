@@ -4,7 +4,6 @@ import Hero from "../Hero";
 import Services from "../Services";
 import Vendors from "../Vendors";
 import Contact from "../Contact";
-import Footer from "../Footer";
 import Packages from "../Packages";
 import "./home.css";
 
@@ -18,7 +17,7 @@ function Home () {
         <Vendors />
         <Packages />
         <Contact />
-        <Footer />
+    
 </>
         
         
