@@ -1,96 +1,87 @@
 import React from "react";
-import "./vendors.css"
+import "./vendors.css";
 
-function Vendors () {
+function Vendors() {
   return (
     <section id="vendors" className="vendors-gallery">
-
       <div className="vendors-header">
-       <h2 >TRENDING VENDORS</h2>
+        <h2>TRENDING VENDORS</h2>
       </div>
-        
+
       <div className="vendors-card-container">
-
+        {/* Vendor Cards */}
         <div className="vendors-card">
-          
           <div className="vendors-card-content">
-            <div>
-              <img src="\images\mona.png" alt="mona"/>
-
-            </div>
-            <p>Kisementi Kampala <strong>2M-4.5M</strong></p>
+            <img src="\images\mona.png" alt="Mona" />
             <h2>Mona Faces</h2>
-           
-            
+            <p>Kisementi Kampala <strong>2M-4.5M</strong></p>
           </div>
         </div>
+
         <div className="vendors-card">
           <div className="vendors-card-content">
-            <div>
-            <img src="\images\zziwa.png" alt="mona"/>
-
-            </div>
-              <p>Kisementi Kampala <strong>2M-4.5M</strong></p>
-            <h2>Hair by Zziwa</h2>
-          
-          </div>
-        </div>
-        <div className="vendors-card">
-          <div className="vendors-card-content">
-          <div>
-            <img src="\images\kembabzi.png" alt="mona"/>
-
-            </div>
-            <p>Naguru Kampala <strong>1M-4M</strong></p>
-            <h2>Kembabazi Catering</h2>
-            
-          </div>
-        </div>
-      </div>
-      <div className="vendors-card-container">
-        <div className="vendors-card">
-          <div className="vendors-card-content">
-          <div>
-            <img src="\images\ashton.png" alt="mona"/>
-
-            </div>
-            <p>Seeta Mukono <strong>2M-5M</strong></p>
+            <img src="\images\ashton.png" alt="Ashton" />
             <h2>Ashton Events</h2>
-          </div>
-        </div>
-
-        <div className="vendors-card">
-          <div className="vendors-card-content">
-          <div>
-            <img src="\images\executive.png" alt="mona"/>
-
-            </div>
-            <p>Kampala  <strong>2M-6M</strong></p>
-            <h2>Executive Rides Ug</h2>
-          </div>
-        </div>
-
-        <div className="vendors-card">
-          <div className="vendors-card-content">
-          <div>
-            <img src="\images\strat2x.png" alt="mona"/>
-
-            </div>
-            <p>Bukoto Kampala <strong>2M-8M</strong></p>
-            <h2>Strat Bridal</h2>
+            <p>Seeta Mukono <strong>2M-5M</strong></p>
           </div>
           
         </div>
+
+        <div className="vendors-card">
+          <div className="vendors-card-content">
+            <img src="\images\zziwa.png" alt="Zziwa" />
+            <h2>Hair by Zziwa</h2>
+            <p>Kisementi Kampala <strong>2M-4.5M</strong></p>
+          </div>
+        </div>
+
+        <div className="vendors-card">
+          <div className="vendors-card-content">
+            <img src="\images\kembabzi.png" alt="Kembabazi" />
+            <h2>Kembabazi Catering</h2>
+            <p>Naguru Kampala <strong>1M-4M</strong></p>
+          </div>
+        </div>
       </div>
-     
+      
 
+      <div className="vendors-card-container">
+        
+        <div className="vendors-card">
+          <div className="vendors-card-content">
+            <img src="\images\janzi.png" alt="Ashton" />
+            <h2>Janzi Band</h2>
+            <p>Kampala <strong>2M-5M</strong></p>
+          </div>
+          
+        </div>
+        <div className="vendors-card">
+          <div className="vendors-card-content">
+            <img src="\images\latitude.png" alt="Ashton" />
+            <h2>Latitude 0 Degrees</h2>
+            <p>Makindye <strong>2M-5M</strong></p>
+          </div>
+          
+        </div>
+
+        <div className="vendors-card">
+          <div className="vendors-card-content">
+            <img src="\images\executive.png" alt="Executive Rides" />
+            <h2>Executive Rides Ug</h2>
+            <p>Kampala <strong>2M-6M</strong></p>
+          </div>
+        </div>
+
+        <div className="vendors-card">
+          <div className="vendors-card-content">
+            <img src="\images\strat2x.png" alt="Strat Bridal" />
+            <h2>Strat Bridal</h2>
+            <p>Bukoto Kampala <strong>2M-8M</strong></p>
+          </div>
+        </div>
+      </div>
     </section>
-
-  
-
-
-
-  )
+  );
 }
 
 export default Vendors;

@@ -1,61 +1,73 @@
+/* vendors.css */
 
-    .vendors-gallery{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 2rem 0;
-        height: 750px;
-  }
-  
- 
-  
-  .vendors-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
- 
-    
-  }
-  
-  .vendors-card {
-    background-color: white(3, 64, 68);
-    border-radius: 8px;
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    height: 290px;
-    margin: 0 10px;
-    border-radius: 5px;
-    margin: 5px;
-    border-style: groove;
-  }
-  
-  .vendors-card img {
-    width: 100%;
-    height: 200px;
-    object-fit:cover;
-  }
-  
-  .vendors-card-content {
-    padding: 16px;
-  }
-  
-  .vendors-card h2 {
-    margin: 0;
-    font-size: 15px;
-    color: black(54, 6, 6);
-    text-align: center;
-    
-  }
-  
-  .vendors-card p {
-    margin-top: 8px;
-    color: black;
-    font-size: 15px;
-    text-align: center;
-  }
-  .vendors-header h2{
-    font-size: 2rem;
-  }
+/* Vendors section styles */
+#vendors {
+  padding: 50px 0;
+}
+
+.vendors-gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vendors-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.vendors-header h2 {
+  font-size: 36px;
+  color: #333;
+}
+
+/* Vendors card styles */
+.vendors-card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.vendors-card {
+  width: calc(33.33% - 20px);
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.vendors-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.vendors-card-content {
+  padding: 20px;
+}
+
+.vendors-card-content img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.vendors-card-content img:hover {
+  transform: scale(1.1);
+}
+
+.vendors-card-content p {
+  color: #888;
+  margin-top: 10px;
+}
+
+.vendors-card-content h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.vendors-card-content strong {
+  color: #ff6b6b;
+}
