@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../Footer";
 import LoginForm from "./LoginForm";
 import NavBar from "../NavBar";
 
@@ -9,7 +8,7 @@ function Login() {
       <section>
         <NavBar />
         <LoginForm />
-        <Footer />
+       
       </section>
     
   );
