@@ -12,7 +12,7 @@ const LoginForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if(email && password) { 
-        let apiUrl="http://localhost:1337/api/logins";
+        let apiUrl="http://https://afaazi-backend.onrender.com/api/logins";
     
         let newLoginObj={ 
             method:"POST",
