@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../NavBar";
-import Footer from "../Footer"
+
 import RegisterForm from "../Register/RegisterForm"
 import {useEffect, useState} from 'react';
 
@@ -23,9 +23,9 @@ function SignUpForm () {
   
     return (
         <>
-            <NavBar />
+           <NavBar />
             <RegisterForm title="Create An Afaazi Account" type="sign" />
-            <Footer/>
+       
         </>
     )
 }
