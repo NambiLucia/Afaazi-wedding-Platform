@@ -1,6 +1,4 @@
-/* src/components/EventForm.css */
 
-/* Ensure the background covers the entire page */
 .background-container {
   background-image: url('/public/images/tents.png');
   background-size: cover;
@@ -11,7 +9,7 @@
   align-items: flex-start; 
 }
 
-/* Move the form up to the top margins */
+
 .booking-container {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
@@ -40,7 +38,7 @@
   margin-right: 10px;
 }
 
-/* Simplified selector for input, email, tel, date, select, and textarea */
+
 .booking-form input[type="text"],
 .booking-form input[type="email"],
 .booking-form input[type="tel"],
