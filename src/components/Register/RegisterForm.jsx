@@ -28,6 +28,7 @@ function RegisterForm() {
           name,email,contact,location,gender,dob
          } }),
       };
+     
 
       fetch(registerUrl, registerObj)
         .then((response) => {

@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../NavBar";
-import Footer from "../Footer"
 import RegisterForm from "../Register/RegisterForm"
 import {useEffect, useState} from 'react';
 
@@ -25,7 +24,7 @@ const SignUpForm = () => {
         <>
             <NavBar />
             <RegisterForm title="Create An Afaazi Account" type="booking" />
-            <Footer/>
+          
         </>
     )
 }
