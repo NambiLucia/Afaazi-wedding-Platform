@@ -20,7 +20,7 @@ function RegisterForm() {
       gender.length!==0 && dob.length!==0 ) { 
        
   
-      const registerUrl = "http://localhost:1337/api/registers";
+      const registerUrl = "http://localhost:1337/api/auth/local/registers";
       const registerObj = {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -28,7 +28,6 @@ function RegisterForm() {
           name,email,contact,location,gender,dob
          } }),
       };
-     
 
       fetch(registerUrl, registerObj)
         .then((response) => {

@@ -35,11 +35,12 @@
   overflow:hidden;
 }
 
-.packages-card h2 {
+.packages-card h1 {
   margin: 0;
-  font-size: 1.4em;
+  font-size: 2em;
   color: black(54, 6, 6);
   text-align: center;
+  margin-bottom: 0.5em;
   
 }
 
@@ -47,5 +48,9 @@
   margin-top: 8px;
   color: black;
   font-size: 1em;
-  text-align: center;
+  text-align: center; 
 }
+.packages-card h3 {
+ color: #ff6b6b;
+}
+
