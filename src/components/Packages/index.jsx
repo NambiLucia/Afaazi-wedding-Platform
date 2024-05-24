@@ -10,14 +10,15 @@ function Packages() {
       <div className="packages-card-container">
         <div className="packages-card">
           <div className="packages-card-content">
-             <h2>BASIC</h2>
+             <h1>BASIC</h1>
             <p>
+              <h3> UGX 2,000,000</h3> <br />
+
                 Event planning and coordination
                 Venue selection and booking
                 decoration
                 On-site event management
-
-                UGX 500,000
+  
             </p>
            
             
@@ -25,14 +26,15 @@ function Packages() {
         </div>
         <div className="packages-card">
           <div className="packages-card-content">
-              <h2>STANDARD</h2>
+              <h1>STANDARD</h1> 
               <p>
+              <h3>UGX 4,200,000</h3> <br />
                 Everything in the Basic Package, plus:
                 Catering services for up to 50 guests
                 Sound system and DJ services
                 Photography and videography coverage
 
-                UGX 1,200,000
+               
               </p>
                         
           
@@ -41,15 +43,17 @@ function Packages() {
         <div className="packages-card">
           <div className="packages-card-content">
 
-            <h2>PREMIUM</h2>
+            <h1>PREMIUM</h1>
             <p>
+            <h3>UGX 6,000,000</h3> <br />
+
                   Everything in the Standard Package, plus:
                   Customized event branding and design
                   VIP seating arrangement
                   Guest accommodation arrangements
                   After-event cleaning services
 
-                  UGX 2,500,000
+                  
               </p>
         
             
