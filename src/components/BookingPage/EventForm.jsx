@@ -52,20 +52,20 @@ const EventForm = () => {
     
 
     console.log(res)
-    alert('Booking Successful! We will get in touch with you shortly.');
+    //alert('Booking Successful! We will get in touch with you shortly.');
     // Clear form fields
-    setFormData({
-     fullName: '',
-      email: '',
-      contact: '',
-      eventDate: '',
-      eventCheckoutDate: '',
-      eventType: '',
-      country: '',
-      city: '',
-      additionalInfo: '',
-      estimatedBudget: '', 
-    });
+  //  setFormData({
+    //  fullName: '',
+      //email: '',
+      //contact: '',
+      //eventDate: '',
+      //eventCheckoutDate: '',
+      //eventType: '',
+      //country: '',
+      //city: '',
+      //additionalInfo: '',
+      //estimatedBudget: '', 
+    //});
   };
   
 
