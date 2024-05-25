@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 
 function RegisterForm() {
@@ -10,6 +10,7 @@ function RegisterForm() {
   const [location, setLocation] = useState("");
   const [gender, setGender] = useState("");
   const [dob, setDob] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ function RegisterForm() {
           body: JSON.stringify({
             username: name,
             email: email,
-            password: password, 
+            password: password,
             contact,
             location,
             gender,
@@ -33,12 +34,14 @@ function RegisterForm() {
           alert('Signup successful!');
           setName("");
           setEmail("");
+          setPassword("");
           setContact("");
           setLocation("");
           setGender("");
           setDob("");
+          navigate('/BookingPage');
         } else {
-          alert(`Failed to sign up: ${data.message}`);
+          alert(`Failed to sign up: ${data.error.message}`);
         }
       } catch (error) {
         console.error('Error signing up:', error);
