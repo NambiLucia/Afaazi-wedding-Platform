@@ -1,81 +1,80 @@
-
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('');
+    const [identifier, setIdentifier] = useState('');
     const [password, setPassword] = useState('');
-   
-   
+    const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        if(email && password) { 
-        let apiUrl="http://localhost:1337/api/logins";
-    
-        let newLoginObj={ 
-            method:"POST",
-            headers:{"content-type":"application/json"},
-            body:JSON.stringify(
-                {data:{email,password}}
-            )};
+        if (identifier && password) {
+            const apiUrl = "http://localhost:1337/api/auth/local";
 
-  fetch(apiUrl, newLoginObj)
- .then((response) => {
-            
-            return response.json()
-        })
+            const newLoginObj = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    identifier,
+                    password
+                })
+            };
 
-.then((data) => {
-            console.log("Login successful",data)
-            setEmail("")
-            setPassword("")
-        })
+            try {
+                const response = await fetch(apiUrl, newLoginObj);
+                const data = await response.json();
 
-       } else{alert("Logins missing")}
-
-
+                if (response.ok) {
+                    console.log("Login successful", data);
+                    setIdentifier('');
+                    setPassword('');
+                 
+                    navigate('/BookingPage');
+                } else {
+                    alert("Login failed: ");
+                }
+            } catch (error) {
+                console.error('Error logging in:', error);
+                alert('Error logging in');
+            }
+        } else {
+            alert("Please fill in all fields");
+        }
     }
-
- 
 
     return (
         <section>
-
-        <div className="loginformcontainer">
-            <form onSubmit={handleSubmit}>
-                <h2>Login to Afaazi</h2>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
+            <div className="loginformcontainer">
+                <form onSubmit={handleSubmit}>
+                    <h2>Login to Afaazi</h2>
+                    <div className="form-group">
+                        <label htmlFor="identifier">Email:</label>
+                        <input
+                            type="text"
+                            id="identifier"
+                            value={identifier}
+                            onChange={(e) => setIdentifier(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <div className="signup-option">
+                    <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit" onClick={handleSubmit}>Login</button>
-            </form>
-           
-            <div className="signup-option">
-                <p>Don't have an account? <Link to="/register/SignUpForm">Sign Up</Link></p>
             </div>
-        </div>
-
-</section>
-
+        </section>
     );
 };
 
