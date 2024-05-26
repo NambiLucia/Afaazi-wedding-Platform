@@ -1,16 +1,17 @@
-
 import React, { useState, useEffect } from "react";
 import "./contact.css";
 import NavBar from "../NavBar";
 
+const initialFormData = {
+    name: "",
+    email: "",
+    companyName: "",
+    message: "",
+    subscribe: false
+};
+
 function Contact() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        companyName: "",
-        message: "",
-        subscribe: false
-    });
+    const [formData, setFormData] = useState(initialFormData);
 
     useEffect(() => {
         const savedFormData = JSON.parse(localStorage.getItem("formData"));
@@ -35,16 +36,13 @@ function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form submitted:", formData);
-        // You can add form submission logic here
-        // For example, you can send the form data to your backend
-        // and handle the response accordingly
-        setFormData({
-            name: "",
-            email: "",
-            companyName: "",
-            message: "",
-            subscribe: false
-        });
+       
+
+        setFormData(initialFormData);
+    };
+
+    const handleReset = () => {
+        setFormData(initialFormData);
     };
 
     return (
@@ -100,13 +98,7 @@ function Contact() {
                         </label>
                         <div className="button-group">
                             <input type="submit" className="submit-btn" value="Submit" />
-                            <button type="button" className="reset-btn" onClick={() => setFormData({
-                                name: "",
-                                email: "",
-                                companyName: "",
-                                message: "",
-                                subscribe: false
-                            })}>Reset</button>
+                            
                         </div>
                     </form>
                 </div>

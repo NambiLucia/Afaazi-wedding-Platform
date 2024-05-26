@@ -1,6 +1,4 @@
-/* vendors.css */
 
-/* Vendors section styles */
 #vendors {
   padding: 50px 0;
 }
@@ -20,7 +18,7 @@
   color: #333;
 }
 
-/* Vendors card styles */
+
 .vendors-card-container {
   display: flex;
   justify-content: space-between;
