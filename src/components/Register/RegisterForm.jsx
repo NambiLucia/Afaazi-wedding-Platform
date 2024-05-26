@@ -88,10 +88,10 @@ function RegisterForm() {
             />
           </div>
           <div className="form-group">
-            <label>Contact Number:</label>
+            <label>Contact:</label>
             <input
               type="tel"
-              name="contactNumber"
+              name="contact"
               value={contact}
               onChange={(e) => setContact(e.target.value)}
               required

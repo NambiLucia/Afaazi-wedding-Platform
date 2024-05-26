@@ -1,0 +1,33 @@
+.event-list-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc; 
+  }
+  
+  .event-list-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc; 
+    padding-bottom: 10px; 
+  }
+  
+  .event-details {
+    font-size: 16px;
+    line-height: 1.6;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 10px; 
+  }
+  
+  .event-details p {
+    margin: 10px 0;
+  }
+  
+  .event-details:last-child {
+    border-bottom: none; 
+  }
+  

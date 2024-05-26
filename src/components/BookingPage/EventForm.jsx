@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './eventform.css';
-import axios from 'axios';
-
-// Connecting front to backend
-axios.get('http://localhost:1337/api')
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error('There was an error!', error);
-  });
-
+import NavBar from '../NavBar';
 
 const EventForm = () => {
   const [formData, setFormData] = useState({
@@ -35,10 +26,9 @@ const EventForm = () => {
   };
 
   const formatMoney = (value) => {
-    // Format value as money (e.g., 100000 -> 100,000)
     const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'UGX', // Ugandan Shilling currency code
+      currency: 'UGX',
       minimumFractionDigits: 0,
     });
     return formatter.format(value.replace(/\D/g, ''));
@@ -46,28 +36,21 @@ const EventForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Save form data to local storage
     localStorage.setItem('bookingFormData', JSON.stringify(formData));
-    const res = axios.post('http://localhost:1337/content-manager/collection-types/api::booking.booking', formData)
-    
-
-    console.log(res)
-    //alert('Booking Successful! We will get in touch with you shortly.');
-    // Clear form fields
-  //  setFormData({
-    //  fullName: '',
-      //email: '',
-      //contact: '',
-      //eventDate: '',
-      //eventCheckoutDate: '',
-      //eventType: '',
-      //country: '',
-      //city: '',
-      //additionalInfo: '',
-      //estimatedBudget: '', 
-    //});
+    alert('Booking Successful! We will get in touch with you shortly.');
+    setFormData({
+      fullName: '',
+      email: '',
+      contact: '',
+      eventDate: '',
+      eventCheckoutDate: '',
+      eventType: '',
+      country: '',
+      city: '',
+      additionalInfo: '',
+      estimatedBudget: '', 
+    });
   };
-  
 
   return (
     <div className="background-container">
@@ -112,7 +95,6 @@ const EventForm = () => {
                 <option value="wedding">Wedding</option>
                 <option value="engagement">Engagement</option>
                 <option value="anniversary">Anniversary</option>
-                
               </select>
             </label>
           </div>
@@ -134,7 +116,6 @@ const EventForm = () => {
                 name="estimatedBudget" 
                 value={formData.estimatedBudget} 
                 onChange={handleChange} 
-               
                 title="Please enter a valid amount" 
                 required 
               />
@@ -146,8 +127,14 @@ const EventForm = () => {
               <textarea name="additionalInfo" value={formData.additionalInfo} onChange={handleChange} />
             </label>
           </div>
-          <button type="submit">Book Event</button>
+          <div className="button-container">
+            <button type="submit">Book Event</button>
+            <Link to="/bookingpage/eventlist">
+              <button type="button">View Booked Events</button>
+            </Link>
+          </div>
         </form>
+        <NavBar/>
       </div>
     </div>
   );
