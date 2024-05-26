@@ -7,30 +7,33 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="social-icons">
-          <a href="https://www.facebook.com" aria-label="Facebook"><FaFacebook /></a>
-          <a href="https://www.twitter.com" aria-label="Twitter"><FaTwitter /></a>
-          <a href="https://www.instagram.com" aria-label="Instagram"><FaInstagram /></a>
+        <div className="footer-section">
+          <h3>Follow Us</h3>
+          <div className="social-icons">
+            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+            <a href="https://www.twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          </div>
         </div>
-        <div className="menu">
+        <div className="footer-section">
           <h3>Quick Links</h3>
-          <ul>
-            <li><Link to="/" className="footer-link">Home</Link></li>
-            <li><Link to="/services" className="footer-link">Services</Link></li>
-            <li><Link to="/gallery" className="footer-link">Gallery</Link></li>
-            <li><Link to="/contact" className="footer-link">Contact</Link></li>
+          <ul className="footer-menu">
+            <li><Link to="/services" className="footer-link">Who We Are</Link></li>
+            <li><Link to="/contact" className="footer-link">Book with US</Link></li>
           </ul>
         </div>
-        <div className="contact-info">
+        <div className="footer-section">
           <h3>Contact Us</h3>
-          <ul>
+          <ul className="contact-info">
             <li><FaMapMarkerAlt /> Innovation Village, Ntinda, Kampala, Uganda</li>
             <li><FaPhone /> +256 759 247 179</li>
             <li><FaEnvelope /> afaazi@gmail.com</li>
           </ul>
         </div>
       </div>
-      <p className="footer-text">© {new Date().getFullYear()} Afaazi-Events. All rights reserved.</p>
+      <div className="footer-bottom">
+        <p className="footer-text">© {new Date().getFullYear()} Afaazi-Events. All rights reserved.</p>
+      </div>
     </footer>
   );
 }

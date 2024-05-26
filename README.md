@@ -35,8 +35,8 @@ Clone the repository
 Ensure you have a backend service running to handle API requests. In our case, we used **Strapi**.
 
 # API Endpoints
-- User Booking:
-- User Logins: GET (http://localhost:1337/api/logins)
+- User Register:GET (http://localhost:1337/api/auth/local/register)
+- User Logins: GET (http://localhost:1337/api/auth/local)
 
 ## API testing
 We used **Postman**
