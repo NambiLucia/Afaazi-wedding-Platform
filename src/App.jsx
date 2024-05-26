@@ -9,6 +9,8 @@ import NotFound from "./components/Notfound/notfound"
 import BookingPage from "./components/BookingPage/BookingPage";
 import Gallery from "./components/Gallery";
 import Services from "./components/Services";
+import EventForm from "./components/BookingPage/EventForm";
+import EventList from "./components/BookingPage/EventList";
 
 
 
@@ -26,6 +28,8 @@ function App() {
           <Route exact path="*" element={<NotFound />} />
           <Route exact path="/gallery" element={<Gallery />} />
           <Route exact path="/services" element={<Services />} />
+          <Route exact path="/bookingpage/eventform" element={<EventForm />} />
+          <Route exact path="/bookingpage/eventlist" element={<EventList />} />
         </Routes>
         <Footer />
       </Router>

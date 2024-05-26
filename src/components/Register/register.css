@@ -1,4 +1,6 @@
 .register-section {
+  position: relative; 
+  z-index: 1; 
   background-image: url("/public/images/bw2.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -11,47 +13,49 @@
 }
 
 .registration-form {
-  max-width: 500px;
-  width: 80%;
-  margin: 20px auto 50px; 
-  padding: 40px;
+  position: absolute; 
+  z-index: -1; 
+  max-width: 400px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
   border: 2px solid #007bff;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-
 .registration-form h1 {
   text-align: center;
-  margin-bottom: 30px; 
-  color: #007bff; 
+  margin-bottom: 20px;
+  color: #007bff;
 }
 
 .form-group {
-  margin-bottom: 25px; 
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 10px; 
-  font-weight: bold; 
-  color: #333; 
+  margin-right: 10px; 
+  font-weight: bold;
+  color: #333;
 }
 
 .form-group input,
 .form-group select {
-  width: 100%;
-  padding: 12px; 
-  font-size: 16px;
-  border-radius: 8px;
+  flex: 1; 
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  transition: border-color 0.3s ease; 
+  transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  border-color: #007bff; 
+  border-color: #007bff;
 }
 
 button[type="submit"] {
@@ -63,7 +67,7 @@ button[type="submit"] {
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {

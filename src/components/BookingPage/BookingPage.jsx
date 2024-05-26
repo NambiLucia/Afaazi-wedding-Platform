@@ -15,9 +15,7 @@ function BookingPage() {
 
       <main className="booking-content">
         <section className="providers">
-          <div className="booking-card">
-            <h2 className="booking-title">Make a Reservation</h2>
-            </div>
+        
         </section>
         <section className="event-form-section">
           <EventForm onAddEvent={handleAddEvent} />
