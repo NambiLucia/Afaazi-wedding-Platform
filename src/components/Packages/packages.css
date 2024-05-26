@@ -1,56 +1,93 @@
-
-#packages{
-  margin:5rem;
+#packages {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
 }
-  .packages-header h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin:1em;
-  }
+
+.packages-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
 
 .packages-card-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  
- 
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 40px;
 }
 
 .packages-card {
-  background-color: white(3, 64, 68);
-  border-radius: 8px;
-  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  height: 290px;
-  margin: 0 10px;
-  border-radius: 5px;
-  margin: 5px;
-  border-style: groove;
+  width: calc(33.33% - 20px);
+  max-width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.packages-card:hover {
+  transform: translateY(-5px);
 }
 
 .packages-card-content {
-  padding: 16px;
-  overflow:hidden;
+  padding: 30px;
 }
 
-.packages-card h1 {
-  margin: 0;
-  font-size: 2em;
-  color: black(54, 6, 6);
-  text-align: center;
-  margin-bottom: 0.5em;
-  
+.packages-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .packages-card p {
-  margin-top: 8px;
-  color: black;
-  font-size: 1em;
-  text-align: center; 
-}
-.packages-card h3 {
- color: #ff6b6b;
+  margin: 0;
+  color: #170404;
+  line-height: 1.6;
 }
 
+.card-a {
+  background-color: #45a063;
+}
+
+.card-b {
+  background-color: #8cbd48; 
+}
+
+.card-c {
+  background-color: #f4e669; 
+}
+
+.card-d {
+  background-color: #f5efbb; 
+}
+
+.card-e {
+  background-color: #f5efbb; 
+}
+
+.card-f {
+  background-color: #f4e669; 
+}
+
+.card-g {
+  background-color: #8cbd48; 
+}
+
+.card-h {
+  background-color: #45a063; 
+}
+
+
+@media (max-width: 768px) {
+  .packages-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .packages-card {
+    width: 100%;
+  }
+}
