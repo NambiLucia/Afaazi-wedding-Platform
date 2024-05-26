@@ -1,3 +1,5 @@
+
+
 .navbar {
   position: fixed;
   top: 0;
@@ -14,21 +16,17 @@
   z-index: 1000;
 }
 
-.navbar-logo {
-  font-size: 24px;
-  
- 
-}
-
 .navbar-nav {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-item {
-  margin-right: 20px;
+  margin: 0 20px;
 }
 
 .nav-item a {
@@ -38,12 +36,10 @@
   align-items: center;
 }
 
-
 .nav-item a svg {
   width: 20px;
   height: 20px;
 }
-
 
 .nav-item a span {
   color: #ffcc00;
@@ -57,10 +53,71 @@
   margin-left: 20px;
 }
 
-.logo{
-  width:200px;
-  height:110px;
+.logo {
+  width: 200px;
+  height: 110px;
 }
+
 body {
   padding-top: 80px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .navbar-icons {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-icons .nav-item {
+    margin: 10px 0;
+  }
+
+  .logo {
+    width: 150px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 10px;
+  }
+
+  .nav-item a span {
+    display: none;
+  }
+
+  .nav-item a svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 60px;
+  }
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 40px; 
+  margin-right: auto;
 }
