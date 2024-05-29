@@ -11,7 +11,7 @@ function Hero () {
                    <i><div class="centered">Planning • Booking • Execute</div></i> 
                  
                    <div>
-                    <a href="/bookingpage" className="btn">Plan with us </a>
+                    <a href="/login" className="btn">Plan with us </a>
                     </div>  
                    
                 </div>
