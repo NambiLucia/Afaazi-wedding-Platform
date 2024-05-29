@@ -1,33 +1,83 @@
+.Eventlist-page {
+  background-image: url('/public/images/icandyUg.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+
 .event-list-container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    width: 60%;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ccc; 
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%; 
+  max-width: 600px;
+  margin: 100px auto 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ccc;
+}
+
+.event-list-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.event-details {
+  font-size: 16px;
+  line-height: 1.6;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.event-details p {
+  margin: 10px 0;
+}
+
+.event-details:last-child {
+  border-bottom: none;
+}
+
+.book-event-button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.book-event-button {
+  width: 45%; 
+  padding: 10px;
+  background-color: #0b4747;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 5px; 
+  margin-bottom: 10px; 
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .event-list-container {
+    width: 80%; 
   }
-  
-  .event-list-title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ccc; 
-    padding-bottom: 10px; 
+
+  .book-event-button {
+    width: 100%; 
+    margin-right: 0; 
   }
-  
-  .event-details {
-    font-size: 16px;
-    line-height: 1.6;
-    border-bottom: 1px solid #ccc; 
-    padding-bottom: 10px; 
+  .event-list-container{
+    margin-top: 13rem;
+
   }
-  
-  .event-details p {
-    margin: 10px 0;
-  }
-  
-  .event-details:last-child {
-    border-bottom: none; 
-  }
-  
+}
