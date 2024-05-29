@@ -44,8 +44,9 @@ const LoginForm = () => {
     }
 
     return (
-        <section>
+        <section className="login-page">
             <div className="loginformcontainer">
+
                 <form onSubmit={handleSubmit}>
                     <h2>Login to Afaazi</h2>
                     <div className="form-group">
@@ -56,6 +57,7 @@ const LoginForm = () => {
                             value={identifier}
                             onChange={(e) => setIdentifier(e.target.value)}
                             required
+                           
                         />
                     </div>
                     <div className="form-group">
@@ -71,7 +73,7 @@ const LoginForm = () => {
                     <button type="submit">Login</button>
                 </form>
                 <div className="signup-option">
-                    <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+                    <p>Don't have an account? <Link to="/register/SignUpForm">Sign Up</Link></p>
                 </div>
             </div>
         </section>
