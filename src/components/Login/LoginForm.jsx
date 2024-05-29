@@ -57,6 +57,7 @@ const LoginForm = () => {
                             value={identifier}
                             onChange={(e) => setIdentifier(e.target.value)}
                             required
+                            className="email-input"
                            
                         />
                     </div>

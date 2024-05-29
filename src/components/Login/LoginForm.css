@@ -48,7 +48,6 @@ input[type="password"] {
 }
 
 
-
 button {
   width: 100%;
   padding: 12px; 
@@ -67,4 +66,13 @@ button:hover {
 .error-message {
   color: #ff0000;
   margin-top: 10px;
+}
+.email-input{
+  width:146px;
+  height:41px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .loginformcontainer {
+    margin-top: 10rem;
+  }
 }
