@@ -21,17 +21,22 @@
 
 .vendors-card-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 30px;
 }
 
 .vendors-card {
-  width: calc(33.33% - 20px);
+  width: calc(25% - 20px);
   background-color: #f9f9f9;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .vendors-card:hover {
@@ -41,11 +46,12 @@
 
 .vendors-card-content {
   padding: 20px;
+  text-align: center; /* Center-align text content */
 }
 
 .vendors-card-content img {
   width: 100%;
-  height: 250px; 
+  height: 200px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
   transition: transform 0.3s ease;
@@ -68,4 +74,35 @@
 
 .vendors-card-content strong {
   color: #ff6b6b;
+}
+
+
+@media (max-width: 1200px) {
+  .vendors-card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .vendors-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .vendors-card {
+    width: 100%;
+  }
+
+  .vendors-header h2 {
+    font-size: 28px;
+  }
+
+  .vendors-card-content h2 {
+    font-size: 20px;
+  }
+
+  .vendors-card-content img {
+    height: 150px;
+  }
 }
