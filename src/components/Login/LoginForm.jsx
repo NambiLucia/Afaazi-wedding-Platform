@@ -74,7 +74,7 @@ const LoginForm = () => {
                     <button type="submit">Login</button>
                 </form>
                 <div className="signup-option">
-                    <p>Don't have an account? <Link to="/register/SignUpForm">Sign Up</Link></p>
+                    <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
                 </div>
             </div>
         </section>
