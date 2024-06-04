@@ -12,40 +12,35 @@ function Packages() {
           <div className="packages-card-content">
             <h2>Classic Elegance</h2>
             <p>
-            Perfect for couples who dream of a timeless and elegant wedding.<br />
-            Full-service coordination, premium table linens, crystal chandeliers, and a bridal suite.<br />
-            <h2>UGX 500,000</h2>
+            Experience timeless elegance with our comprehensive makeup package, including expert coordination, premium beauty products, crystal-inspired application techniques, and a luxurious bridal suite for preparation.<br />
+            <h2>UGX 1,000,000</h2>
               
             </p>
           </div>
         </div>
         <div className="packages-card card-b">
           <div className="packages-card-content">
-            <h2>Rustic Charm</h2>
+            <h2>Rustic Decor</h2>
             <p>
-            Ideal for those who love a rustic, country-inspired wedding. <br />
-                   
-            A vintage photo booth, string lights, and a country band.<br />
+            Ideal for a rustic, country-inspired wedding, this package includes a vintage photo booth with antique props, enchanting string lights, and a cozy setup for a live country band with hay bales and wooden barrels.<br />
             <h2>UGX 1,200,000</h2>
             </p>
           </div>
         </div>
         <div className="packages-card card-c">
           <div className="packages-card-content">
-            <h2>Beach Bliss</h2>
+            <h2>Hair Bliss</h2>
             <p>
-            For couples who envision a romantic beachside wedding. :<br />
-            Beach cabanas, fire dancers, oceanfront reception, and a steel drum band.<br />
+            Includes a consultation and trial session, choice of updo or half-up style, hair accessories, long-lasting styling, on-site styling on the wedding day, and post-wedding hair care advice.Bridal party services are also available.<br />
             <h2>UGX 2,000,000</h2>
             </p>
           </div>
         </div>
         <div className="packages-card card-d">
           <div className="packages-card-content">
-            <h2>Garden Romance</h2>
+            <h2>Garden Feast</h2>
             <p>
-            Perfect for nature lovers who want a lush, garden-themed wedding. :<br />
-            Floral centerpieces, vintage garden furniture, fairy lights, and a harpist.<br />
+            Includes beautifully plated dishes with edible flowers, a buffet of seasonal selections, a dessert bar under fairy lights, and a cocktail hour with garden-inspired drinks and harpist melodies.<br />
             <h2>UGX 2,500,000</h2>
             </p>
           </div>
@@ -53,10 +48,9 @@ function Packages() {
 
         <div className="packages-card card-e">
           <div className="packages-card-content">
-            <h2>Fairytale Fantasy</h2>
+            <h2>Fairytale Live Band</h2>
             <p>
-            For those who want to feel like royalty on their big day. <br />
-            Crystal chandeliers, gold accents, live orchestra, and a royal-themed photo shoot.<br />
+            Experience an enchanting wedding with our Fairytale Live Band.Enjoy captivating music creating a magical atmosphere, from classical melodies to modern hits with a regal touch. Engage your guests with interactive performances.<br />
              
             <h2> UGX 3,000,000</h2>
             </p>
@@ -65,10 +59,9 @@ function Packages() {
 
         <div className="packages-card card-f">
           <div className="packages-card-content">
-            <h2>Modern Chic</h2>
+            <h2>Modern Chic Venue</h2>
             <p>
-            Ideal for couples seeking a contemporary and stylish wedding. <br />
-            LED lighting, sleek furniture, a DJ, and a custom photo wall.<br />
+             Experience a contemporary ambiance with customizable LED lighting and sleek, modern furniture,a professional DJ, and create lasting memories with a custom photo wall for guests to enjoy.<br />
             <h2>UGX 3,000,000</h2>
             </p>
           </div>
@@ -76,10 +69,9 @@ function Packages() {
 
         <div className="packages-card card-g">
           <div className="packages-card-content">
-            <h2>Cultural Heritage</h2>
+            <h2>Drive-Thru Wedding</h2>
             <p>
-            Ideal for couples who wish to honor their cultural traditions. <br />
-            Travel coordination, destination photographer, welcome gifts for guests, and a farewell brunch.<br />
+            Enjoy a decorated car, personalized playlist, and scenic drive to a picturesque location for your vows. Capture every moment with professional photography and enjoy a celebratory meal delivered to your car.<br />
             <h2>UGX 3,500,000</h2>
             </p>
           </div>
@@ -87,10 +79,9 @@ function Packages() {
 
         <div className="packages-card card-h">
           <div className="packages-card-content">
-            <h2>Destination Dream</h2>
+            <h2>Strat Bride</h2>
             <p>
-            Perfect for those who want a wedding in an exotic location.<br />
-            ravel coordination, destination photographer, welcome gifts for guests, and a farewell brunch.<br />
+            Experience personalized styling consultations, exclusive access to designer gowns, and custom fittings for a flawless fit. Complete your look with our range of bridal accessories and entrust us with your gown's preservation after the wedding.<br />
             <h2>UGX 5,000,000</h2>
             </p>
           </div>
