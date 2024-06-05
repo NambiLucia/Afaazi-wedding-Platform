@@ -26,7 +26,7 @@ function NavBar() {
           </a>
           </li>
         <li className="nav-item">
-          <a href="/services">
+          <a href="https://afaazi-backend.onrender.com/services">
             <FaClipboardList />
             <span>Services</span>
           </a>
