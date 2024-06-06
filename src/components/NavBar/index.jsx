@@ -9,53 +9,55 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import "./navbar.css";
+import { Link } from "react-router-dom";
+
 
 function NavBar() {
   return (
     <nav className="navbar">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a href="/">
+          <Link to="/">
             <span className="navbar-brand">AFAAZI</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="/">
-            <FaHome />
+          <Link to="/">
+          <FaHome />
             <span>Home</span>
-          </a>
+          </Link>
           </li>
         <li className="nav-item">
-          <a href="/services">
+          <Link to="/services">
             <FaClipboardList />
             <span>Services</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="/gallery">
+          <Link to="/gallery">
             <FaImages />
             <span>Gallery</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="/#vendors">
+          <Link to="/#vendors">
             <FaUser />
             <span>Vendors</span>
-          </a>
+          </Link>
         </li>
        
         <li className="nav-item">
-          <a href="/login">
+          <Link to="/login">
             <FaSignInAlt />
             <span>Login</span>
-          </a>
+          </Link>
         </li>
 
         <li className="nav-item">
-          <a href="/contact">
+          <Link to="/contact">
             <FaEnvelope />
             <span>Contact us</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
