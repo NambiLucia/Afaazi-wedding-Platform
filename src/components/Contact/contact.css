@@ -8,6 +8,7 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 4rem;
 }
 
 .contact-form-container {
@@ -16,6 +17,7 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 .contact-form-container h1 {
@@ -114,3 +116,9 @@
         margin-bottom: 20px;
     }
 }
+@media (min-width: 320px) and (max-width: 480px) {
+    .contact-form-container {
+      margin-top: 9rem;
+    }
+  }
+  
