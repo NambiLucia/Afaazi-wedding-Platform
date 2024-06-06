@@ -78,6 +78,7 @@
   }
   .event-list-container{
     margin-top: 13rem;
+    overflow-x:scroll;
 
   }
 }

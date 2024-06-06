@@ -93,6 +93,8 @@ function RegisterForm() {
               type="tel"
               name="contact"
               value={contact}
+              pattern="[0-9]{10}"
+              title="Please enter a valid 10-digit phone number"
               onChange={(e) => setContact(e.target.value)}
               required
             />
