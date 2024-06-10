@@ -4,7 +4,7 @@ import "./vendors.css";
 
 function Vendors() {
   return (
-    <section id="vendors" className="vendors-gallery">
+    <section className="vendors-gallery">
       <div className="vendors-header">
         <h2>TRENDING VENDORS</h2>
       </div>

@@ -1,0 +1,10 @@
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+img{
+    max-width: 625px;
+    height: 500px;
+}
