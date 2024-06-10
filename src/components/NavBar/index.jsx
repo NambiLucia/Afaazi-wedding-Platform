@@ -7,6 +7,7 @@ import {
   FaCalendarAlt,
   FaSignInAlt,
   FaEnvelope,
+  FaQuestionCircle,
 } from "react-icons/fa";
 import "./navbar.css";
 import { Link } from "react-router-dom";
@@ -27,6 +28,15 @@ function NavBar() {
             <span>Home</span>
           </Link>
           </li>
+
+          <li className="nav-item">
+          <Link to="/about">
+          <FaQuestionCircle /> 
+            <span>About us</span>
+          </Link>
+          </li>
+
+
         <li className="nav-item">
           <Link to="/services">
             <FaClipboardList />
@@ -40,7 +50,7 @@ function NavBar() {
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/#vendors">
+          <Link to="/vendors">
             <FaUser />
             <span>Vendors</span>
           </Link>

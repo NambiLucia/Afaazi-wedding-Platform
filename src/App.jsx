@@ -11,6 +11,8 @@ import Gallery from "./components/Gallery";
 import Services from "./components/Services";
 import EventForm from "./components/BookingPage/EventForm";
 import EventList from "./components/BookingPage/EventList";
+import Vendors from "./components/Vendors";
+import About from "./components/About";
 
 
 
@@ -30,6 +32,8 @@ function App() {
           <Route exact path="/services" element={<Services />} />
           <Route exact path="/bookingpage/eventform" element={<EventForm />} />
           <Route exact path="/bookingpage/eventlist" element={<EventList />} />
+          <Route exact path="/vendors" element={<Vendors />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
         <Footer />
       </Router>
