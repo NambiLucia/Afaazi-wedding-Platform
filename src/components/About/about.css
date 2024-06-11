@@ -2,9 +2,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 6rem;
+    margin: 6rem;
+    gap: 5%;
+    padding: 0 2rem 0 2rem;
+  
 }
-img{
-    max-width: 625px;
-    height: 500px;
+.about-img{
+    max-width: 700px;
+    
+}
+.about-heading{
+    font-size: 2em;
+    
+}
+.about-paragraph{
+    text-wrap:balance;
+    line-height: 0.9cm;
+}
+.about-container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem;
+    gap: 20%;
+    padding: 0 2rem 0 2rem;
+}
+.about-container2 ul{
+    list-style:disc;
+    line-height: 0.9cm;
+}
+.about-container2 h3{
+    margin: 0.5em;
+
+}
+.about-heading2{
+    text-align: center;
+    font-size: 2em;
 }
