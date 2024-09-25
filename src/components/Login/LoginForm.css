@@ -38,7 +38,7 @@ label {
 }
 
 
-input[type="email"],
+input[type="username"],
 input[type="password"] {
   width: 100%;
   padding: 12px;
@@ -67,7 +67,7 @@ button:hover {
   color: #ff0000;
   margin-top: 10px;
 }
-.email-input{
+.username-input{
   width:146px;
   height:41px;
 }

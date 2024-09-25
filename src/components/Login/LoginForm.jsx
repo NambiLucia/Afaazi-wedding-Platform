@@ -3,20 +3,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 
 const LoginForm = () => {
-    const [identifier, setIdentifier] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (identifier && password) {
-            const apiUrl = "http://localhost:1337/api/auth/local";
+        if (username && password) {
+            const apiUrl = "http://localhost:5000/couples/login";
 
             const newLoginObj = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    identifier,
+                    username,
                     password
                 })
             };
@@ -27,7 +27,7 @@ const LoginForm = () => {
 
                 if (response.ok) {
                     console.log("Login successful", data);
-                    setIdentifier('');
+                    setUsername('');
                     setPassword('');
                  
                     navigate('/BookingPage');
@@ -50,14 +50,14 @@ const LoginForm = () => {
                 <form onSubmit={handleSubmit}>
                     <h2>Login to Afaazi</h2>
                     <div className="form-group">
-                        <label htmlFor="identifier">Email:</label>
+                        <label htmlFor="username">Username:</label>
                         <input
                             type="text"
-                            id="identifier"
-                            value={identifier}
-                            onChange={(e) => setIdentifier(e.target.value)}
+                            id="username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             required
-                            className="email-input"
+                            className="username-input"
                            
                         />
                     </div>
@@ -74,7 +74,9 @@ const LoginForm = () => {
                     <button type="submit">Login</button>
                 </form>
                 <div className="signup-option">
-                    <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+                    <p>Don't have an account?</p>
+                    <p><Link to="/register">Sign Up as a Couple</Link> OR <Link to="/vendor-register">Vendor</Link>
+                    </p>
                 </div>
             </div>
         </section>

@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 
-function RegisterForm() {
+function VendorForm() {
   const [username, setUsername] = useState("");
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [password, setPassword] = useState("");
- 
+  const [category, setCategory] = useState("");
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (username && fullname && email && telephone && password) {
+    if (username && fullname && email && telephone && password && category) {
       try {
         const response = await fetch('http://localhost:5000/couples/register', {
           method: 'POST',
@@ -24,6 +25,7 @@ function RegisterForm() {
             email: email,
             telephone:telephone,
             password: password,
+            category:category
           }),
         });
         const data = await response.json();
@@ -34,8 +36,10 @@ function RegisterForm() {
           setEmail("");
           setTelephone("");
           setPassword("");
+          setCategory("");
 
           navigate('/BookingPage');
+
         } else {
           alert(`Failed to sign up: ${data.error.message}`);
         }
@@ -51,7 +55,7 @@ function RegisterForm() {
   return (
     <section className="register-section">
       <div className="registration-form">
-        <h1>Couple Registration</h1>
+        <h1>Vendor Registration</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Username:</label>
@@ -110,6 +114,26 @@ function RegisterForm() {
             />
           </div>
 
+          <div className="form-group">
+            <label>Category:</label>
+            <select 
+             name="category"
+             value={category}
+             onChange={(e) => setCategory(e.target.value)}
+             required>
+
+
+            <option value="Make-up">Make-up</option>
+            <option value="Hair">Hair</option>
+            <option value="Photography & Videography">Photography & Videography</option>
+            <option value="Decoration">Decoration</option>
+            <option value="Catering">Catering</option>
+            <option value="Car Hire">Car Hire</option>
+            <option value="Venues">Venues</option>
+        
+              </select>
+          </div>
+
           <button type="submit">
             Register
           </button>
@@ -124,4 +148,4 @@ function RegisterForm() {
   );
 }
 
-export default RegisterForm;
+export default VendorForm;
