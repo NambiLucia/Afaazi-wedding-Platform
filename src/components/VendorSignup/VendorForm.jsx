@@ -1,6 +1,7 @@
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./register.css";
+import "./registervendor.css";
 
 function VendorForm() {
   const [username, setUsername] = useState("");
@@ -16,7 +17,7 @@ function VendorForm() {
     e.preventDefault();
     if (username && fullname && email && telephone && password && category) {
       try {
-        const response = await fetch('http://localhost:5000/couples/register', {
+        const response = await fetch('http://localhost:5000/vendors/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -53,8 +54,8 @@ function VendorForm() {
   };
 
   return (
-    <section className="register-section">
-      <div className="registration-form">
+    <section className="vendor-register-section">
+      <div className="vendor-registration-form">
         <h1>Vendor Registration</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -114,7 +115,7 @@ function VendorForm() {
             />
           </div>
 
-          <div className="form-group">
+         <div className="form-group">
             <label>Category:</label>
             <select 
              name="category"
@@ -132,7 +133,8 @@ function VendorForm() {
             <option value="Venues">Venues</option>
         
               </select>
-          </div>
+          </div> 
+          
 
           <button type="submit">
             Register

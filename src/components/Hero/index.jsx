@@ -13,10 +13,12 @@ function Hero () {
                    <div>
                     <a href="/login" className="btn">Plan with us </a>
                     </div>  
+
                    
                 </div>
                
             </div>
+            
         </section>
     )
 }
