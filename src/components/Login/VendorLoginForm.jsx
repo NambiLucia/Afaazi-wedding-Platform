@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './LoginForm.css';
+import './Vendorlog.css';
 
-const LoginForm = () => {
+const VendorForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -10,19 +10,23 @@ const LoginForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (username && password) {
-            const apiUrl = "http://localhost:5000/couples/login";
+            const apiUrl = "http://localhost:5000/vendors/login";
 
-            const newLoginObj = {
+            const newVendorLoginObj = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     username,
                     password
                 })
+
+                
             };
+            console.log("Request Body: ", newVendorLoginObj);
+
 
             try {
-                const response = await fetch(apiUrl, newLoginObj);
+                const response = await fetch(apiUrl, newVendorLoginObj);
                 const data = await response.json();
 
                 if (response.ok) {
@@ -48,7 +52,7 @@ const LoginForm = () => {
             <div className="loginformcontainer">
 
                 <form onSubmit={handleSubmit}>
-                    <h2>Login to Afaazi</h2>
+                    <h2>Login As Vendor</h2>
                     <div className="form-group">
                         <label htmlFor="username">Username:</label>
                         <input
@@ -83,4 +87,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default VendorForm;

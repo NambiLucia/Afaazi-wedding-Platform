@@ -56,12 +56,17 @@ function NavBar() {
           </Link>
         </li>
        
-        <li className="nav-item">
-          <Link to="/login">
-            <FaSignInAlt />
-            <span>Login</span>
-          </Link>
-        </li>
+        <li className="nav-item dropdown">
+    <div className="dropdown-toggle">
+        <FaSignInAlt />
+        <span className="login-span">Login</span>
+    </div>
+    <div className="dropdown-menu">
+        <Link to="/login" className="dropdown-item">Couple</Link>
+        <Link to="/Vendorlogin" className="dropdown-item">Vendor</Link>
+    </div>
+</li>
+
 
         <li className="nav-item">
           <Link to="/contact">
