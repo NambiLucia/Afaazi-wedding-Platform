@@ -14,6 +14,8 @@ import EventList from "./components/BookingPage/EventList";
 import Vendors from "./components/Vendors";
 import About from "./components/About";
 import VendorSignup from "./components/VendorSignup/vendorRegister"
+import Vendorlogin from "./components/Login/vendorlog"
+
 
 
 
@@ -37,6 +39,7 @@ function App() {
           <Route exact path="/vendors" element={<Vendors />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/vendorregister" element={<VendorSignup />} />
+          <Route exact path="/Vendorlogin" element={<Vendorlogin />} />
           
         </Routes>
         <Footer />
