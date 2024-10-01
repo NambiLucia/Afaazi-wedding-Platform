@@ -5,51 +5,78 @@ import NavBar from '../NavBar';
 
 const EventForm = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    username: '',
+    fullname: '',
     email: '',
-    contact: '',
+    telephone: '',
     eventDate: '',
-    eventCheckoutDate: '',
     eventType: '',
     country: '',
     city: '',
+    estimatedBudget: '',
     additionalInfo: '',
-    estimatedBudget: '', 
+    vendorId: ''
   });
+
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
-      ...prevState,
-      [name]: name === 'estimatedBudget' ? formatMoney(value) : value,
+      ...prevState, 
+      [name]: value 
     }));
   };
 
-  const formatMoney = (value) => {
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'UGX',
-      minimumFractionDigits: 0,
-    });
-    return formatter.format(value.replace(/\D/g, ''));
-  };
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    localStorage.setItem('bookingFormData', JSON.stringify(formData));
-    alert('Booking Successful! We will get in touch with you shortly.');
-    setFormData({
-      fullName: '',
-      email: '',
-      contact: '',
-      eventDate: '',
-      eventCheckoutDate: '',
-      eventType: '',
-      country: '',
-      city: '',
-      additionalInfo: '',
-      estimatedBudget: '', 
-    });
+    setLoading(true);
+    setError(null);
+    setSuccessMessage('');
+
+    const token = localStorage.getItem('authToken');
+
+    try {
+      const response = await fetch('http://localhost:5000/bookings/create-booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ ...formData })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create booking');
+      }
+
+      const result = await response.json();
+      setSuccessMessage('Booking Successful! We will get in touch with you shortly.');
+      
+      // Reset form after success
+      setFormData({
+        username: '',
+        fullname: '',
+        email: '',
+        telephone: '',
+        eventDate: '', 
+        eventType: '',
+        country: '',
+        city: '',
+        estimatedBudget: '',
+        additionalInfo: '',
+        vendorId: ''
+      });
+    } catch (error) {
+      setError(error.message);
+    } 
+    //finally {
+      //setLoading(false); 
+    //}
   };
 
   return (
@@ -59,23 +86,26 @@ const EventForm = () => {
         <form className="booking-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <label>
+              Username:
+              <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+            </label>
+
+            <label>
               Full Name:
-              <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
+              <input type="text" name="fullname" value={formData.fullname} onChange={handleChange} required />
             </label>
             <label>
               Email:
               <input type="email" name="email" value={formData.email} onChange={handleChange} required />
             </label>
             <label>
-              Contact:
-              <input 
-                type="tel" 
-                name="contact" 
-                value={formData.contact} 
-                onChange={handleChange} 
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                required 
-                title="Please enter a valid phone number (e.g., 123-456-7890)" 
+              Telephone:
+              <input
+                type="tel"
+                name="telephone"
+                value={formData.telephone}
+                onChange={handleChange}
+                required
               />
             </label>
           </div>
@@ -84,10 +114,7 @@ const EventForm = () => {
               Event Date:
               <input type="date" name="eventDate" value={formData.eventDate} onChange={handleChange} required />
             </label>
-            <label>
-              Checkout Date:
-              <input type="date" name="eventCheckoutDate" value={formData.eventCheckoutDate} onChange={handleChange} required />
-            </label>
+
             <label>
               Event Type:
               <select name="eventType" value={formData.eventType} onChange={handleChange} required>
@@ -111,13 +138,12 @@ const EventForm = () => {
           <div className="form-row">
             <label>
               Estimated Budget (UGX):
-              <input 
-                type="text" 
-                name="estimatedBudget" 
-                value={formData.estimatedBudget} 
-                onChange={handleChange} 
-                title="Please enter a valid amount" 
-                required 
+              <input
+                type="text"
+                name="estimatedBudget"
+                value={formData.estimatedBudget}
+                onChange={handleChange}
+                required
               />
             </label>
           </div>
@@ -126,15 +152,23 @@ const EventForm = () => {
               Additional Information:
               <textarea name="additionalInfo" value={formData.additionalInfo} onChange={handleChange} />
             </label>
+            <label>
+              Vendor number:
+              <textarea name="vendorId" value={formData.vendorId} onChange={handleChange} />
+            </label>
           </div>
           <div className="button-container">
-            <button type="submit">Book Event</button>
+            <button type="submit" disabled={loading}>
+              {loading ? 'Booking...' : 'Book Event'}
+            </button>
             <Link to="/bookingpage/eventlist">
               <button type="button">View Booked Events</button>
             </Link>
           </div>
+          {error && <p className="error-message">Error: {error}</p>}
+          {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
-        <NavBar/>
+        <NavBar />
       </div>
     </div>
   );
