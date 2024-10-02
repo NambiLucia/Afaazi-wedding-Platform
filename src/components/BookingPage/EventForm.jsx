@@ -4,80 +4,104 @@ import './eventform.css';
 import NavBar from '../NavBar';
 
 const EventForm = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    fullname: '',
-    email: '',
-    telephone: '',
-    eventDate: '',
-    eventType: '',
-    country: '',
-    city: '',
-    estimatedBudget: '',
-    additionalInfo: '',
-    vendorId: ''
-  });
-
-  
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState, 
-      [name]: value 
-    }));
-  };
+  const [username, setUsername] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [eventDate, setEventDate] = useState("");
+  const [eventType, setEventType] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [estimatedBudget, setEstimatedBudget] = useState("");
+  const [additionalInfo, setAdditionalInfo] = useState("");
+  const [vendorId, setVendorId] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setLoading(true);
     setError(null);
     setSuccessMessage('');
 
+
     const token = localStorage.getItem('authToken');
 
-    try {
-      const response = await fetch('http://localhost:5000/bookings/create-booking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    
+    if (!token) {
+      alert("No authentication token found. Please log in.");
+      setLoading(false);
+      return;
+    }
+
+    if (username && fullname && email && telephone && eventDate && eventType && country && city && estimatedBudget && additionalInfo && vendorId) {
+      const apiUrl = "http://localhost:5000/bookings/create-booking";
+
+      // Prepare request options
+      const newBookingObj = {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ ...formData })
-      });
+        body: JSON.stringify({
+          username,
+          fullname,
+          email,
+          telephone,
+          eventDate,
+          eventType,
+          country,
+          city,
+          estimatedBudget,
+          additionalInfo,
+          vendorId
+        })
+      };
 
-      if (!response.ok) {
-        throw new Error('Failed to create booking');
+      try {
+  
+        const response = await fetch(apiUrl, newBookingObj);
+        const data = await response.json();
+
+        if (response.ok) {
+          console.log("Booking successful", data);
+
+
+          setUsername('');
+          setFullname('');
+          setEmail('');
+          setTelephone('');
+          setEventDate('');
+          setEventType('');
+          setCountry('');
+          setCity('');
+          setEstimatedBudget('');
+          setAdditionalInfo('');
+          setVendorId('');
+
+        
+          setSuccessMessage('Booking created successfully!');
+          
+          
+          // navigate('/EventList'); 
+        } else {
+          console.error("Failed to create booking:", data);
+          alert("Failed to create booking: " , (data.message || "Unknown error"));
+        }
+      } catch (error) {
+        console.error('Error booking your event:', error);
+        alert('Error booking your event: ' , error.message);
       }
+    } else {
+      alert("Please fill in all Booking fields");
+    }
 
-      const result = await response.json();
-      setSuccessMessage('Booking Successful! We will get in touch with you shortly.');
-      
-      // Reset form after success
-      setFormData({
-        username: '',
-        fullname: '',
-        email: '',
-        telephone: '',
-        eventDate: '', 
-        eventType: '',
-        country: '',
-        city: '',
-        estimatedBudget: '',
-        additionalInfo: '',
-        vendorId: ''
-      });
-    } catch (error) {
-      setError(error.message);
-    } 
-    //finally {
-      //setLoading(false); 
-    //}
-  };
+
+    setLoading(false); 
+  }
 
   return (
     <div className="background-container">
@@ -87,37 +111,32 @@ const EventForm = () => {
           <div className="form-row">
             <label>
               Username:
-              <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+              <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
             </label>
 
             <label>
               Full Name:
-              <input type="text" name="fullname" value={formData.fullname} onChange={handleChange} required />
+              <input type="text" name="fullname" value={fullname} onChange={(e) => setFullname(e.target.value)} required />
             </label>
             <label>
               Email:
-              <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+              <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </label>
             <label>
               Telephone:
-              <input
-                type="tel"
-                name="telephone"
-                value={formData.telephone}
-                onChange={handleChange}
-                required
-              />
+              <input type="tel" name="telephone" value={telephone} onChange={(e) => setTelephone(e.target.value)} required />
             </label>
           </div>
+          
           <div className="form-row">
             <label>
               Event Date:
-              <input type="date" name="eventDate" value={formData.eventDate} onChange={handleChange} required />
+              <input type="date" name="eventDate" value={eventDate} onChange={(e) => setEventDate(e.target.value)} required />
             </label>
 
             <label>
               Event Type:
-              <select name="eventType" value={formData.eventType} onChange={handleChange} required>
+              <select name="eventType" value={eventType} onChange={(e) => setEventType(e.target.value)} required>
                 <option value="">Select event type</option>
                 <option value="wedding">Wedding</option>
                 <option value="engagement">Engagement</option>
@@ -125,38 +144,36 @@ const EventForm = () => {
               </select>
             </label>
           </div>
+
           <div className="form-row">
             <label>
               Country:
-              <input type="text" name="country" value={formData.country} onChange={handleChange} required />
+              <input type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)} required />
             </label>
             <label>
               City:
-              <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+              <input type="text" name="city" value={city} onChange={(e) => setCity(e.target.value)} required />
             </label>
           </div>
+
           <div className="form-row">
             <label>
               Estimated Budget (UGX):
-              <input
-                type="text"
-                name="estimatedBudget"
-                value={formData.estimatedBudget}
-                onChange={handleChange}
-                required
-              />
+              <input type="text" name="estimatedBudget" value={estimatedBudget} onChange={(e) => setEstimatedBudget(e.target.value)} required />
             </label>
           </div>
+
           <div className="form-row">
             <label>
               Additional Information:
-              <textarea name="additionalInfo" value={formData.additionalInfo} onChange={handleChange} />
+              <textarea name="additionalInfo" value={additionalInfo} onChange={(e) => setAdditionalInfo(e.target.value)} required />
             </label>
             <label>
               Vendor number:
-              <textarea name="vendorId" value={formData.vendorId} onChange={handleChange} />
+              <textarea name="vendorId" value={vendorId} onChange={(e) => setVendorId(e.target.value)} required />
             </label>
           </div>
+
           <div className="button-container">
             <button type="submit" disabled={loading}>
               {loading ? 'Booking...' : 'Book Event'}
@@ -165,6 +182,7 @@ const EventForm = () => {
               <button type="button">View Booked Events</button>
             </Link>
           </div>
+
           {error && <p className="error-message">Error: {error}</p>}
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>

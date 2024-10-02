@@ -27,6 +27,11 @@ const LoginForm = () => {
 
                 if (response.ok) {
                     console.log("Login successful", data);
+
+                    //store token in local storage
+
+                    localStorage.setItem('authToken',data.token)
+
                     setUsername('');
                     setPassword('');
                  
