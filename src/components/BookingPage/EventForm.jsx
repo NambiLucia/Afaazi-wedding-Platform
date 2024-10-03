@@ -40,6 +40,8 @@ const EventForm = () => {
     if (username && fullname && email && telephone && eventDate && eventType && country && city && estimatedBudget && additionalInfo && vendorId) {
       const apiUrl = "http://localhost:5000/bookings/create-booking";
 
+      const parsedVendorId = parseInt(vendorId, 10); 
+
       // Prepare request options
       const newBookingObj = {
         method: "POST",
@@ -58,7 +60,7 @@ const EventForm = () => {
           city,
           estimatedBudget,
           additionalInfo,
-          vendorId
+          vendorId:parsedVendorId
         })
       };
 
