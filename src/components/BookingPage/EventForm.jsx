@@ -27,10 +27,11 @@ const EventForm = () => {
     setSuccessMessage('');
 
 
-    const token = localStorage.getItem('authToken');
+    const coupleToken = localStorage.getItem('authToken');
+    console.log('auth Token:', coupleToken); // Add this for debugging
 
     
-    if (!token) {
+    if (!coupleToken) {
       alert("No authentication token found. Please log in.");
       setLoading(false);
       return;
@@ -44,7 +45,7 @@ const EventForm = () => {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${coupleToken}`
         },
         body: JSON.stringify({
           username,
@@ -60,6 +61,24 @@ const EventForm = () => {
           vendorId
         })
       };
+
+      console.log(JSON.stringify({
+        username,
+        fullname,
+        email,
+        telephone,
+        eventDate,
+        eventType,
+        country,
+        city,
+        estimatedBudget,
+        additionalInfo,
+        vendorId
+      }));
+      
+
+
+
 
       try {
   
@@ -159,7 +178,7 @@ const EventForm = () => {
           <div className="form-row">
             <label>
               Estimated Budget (UGX):
-              <input type="text" name="estimatedBudget" value={estimatedBudget} onChange={(e) => setEstimatedBudget(e.target.value)} required />
+              <input type="number" name="estimatedBudget" value={estimatedBudget} onChange={(e) => setEstimatedBudget(e.target.value)} required />
             </label>
           </div>
 
@@ -170,7 +189,7 @@ const EventForm = () => {
             </label>
             <label>
               Vendor number:
-              <textarea name="vendorId" value={vendorId} onChange={(e) => setVendorId(e.target.value)} required />
+              <input name="vendorId" type="number" value={vendorId} onChange={(e) => setVendorId(e.target.value)} required />
             </label>
           </div>
 

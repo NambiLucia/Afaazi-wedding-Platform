@@ -24,13 +24,16 @@ const LoginForm = () => {
             try {
                 const response = await fetch(apiUrl, newLoginObj);
                 const data = await response.json();
+             
 
                 if (response.ok) {
                     console.log("Login successful", data);
 
                     //store token in local storage
 
-                    localStorage.setItem('authToken',data.token)
+                 localStorage.setItem('authToken',data.coupleToken)
+                    // Optionally log the token
+                console.log('Stored token:', data.coupleToken);
 
                     setUsername('');
                     setPassword('');
