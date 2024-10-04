@@ -8,10 +8,12 @@ const EventList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  //const slug = localStorage.getItem('slug');
+
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('http://localhost:5000/bookings'); // API to fetch bookings
+        const response = await fetch(`http://localhost:5000/bookings`); // API to fetch bookings
         if (!response.ok) {
           throw new Error('Failed to fetch event data');
         }
@@ -36,7 +38,7 @@ const EventList = () => {
   }
 
   return (
-    <section className="Eventlist-page">
+    <section className="event-list-page">
       <div className="event-list-container">
         <h2 className="event-list-title">Event List</h2>
         {eventData && eventData.length > 0 ? (
@@ -53,6 +55,7 @@ const EventList = () => {
                   <th>City</th>
                   <th>Estimated Budget</th>
                   <th>Additional Information</th>
+                  <th>Vendor Booked</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,6 +70,7 @@ const EventList = () => {
                     <td>{event.city}</td>
                     <td>{event.estimatedBudget}</td>
                     <td>{event.additionalInfo}</td>
+                    <td>{event.vendor.username}</td>
                   </tr>
                 ))}
               </tbody>
@@ -75,12 +79,14 @@ const EventList = () => {
         ) : (
           <p>No events booked yet.</p>
         )}
-        <Link to="/" className="book-event-link">
-          <button className="book-event-button">Close Event</button>
-        </Link>
-        <Link to="/bookingpage/eventform" className="book-event-link">
-          <button className="book-event-button">Book Event</button>
-        </Link>
+        <div className="button-container">
+          <Link to="/" className="book-event-link">
+            <button className="book-event-button">Close Event</button>
+          </Link>
+          <Link to="/bookingpage/eventform" className="book-event-link">
+            <button className="book-event-button">Book Event</button>
+          </Link>
+        </div>
         <NavBar />
       </div>
     </section>

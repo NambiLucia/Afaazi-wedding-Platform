@@ -1,3 +1,4 @@
+
 .Eventlist-page {
   background-image: url('/public/images/icandyUg.png');
   background-size: cover;
@@ -6,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 40px;
+  padding: 20px; 
 }
 
 
@@ -14,11 +15,12 @@
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
-  width: 90%; 
-  max-width: 600px;
+  width: 100%; 
+  max-width: 100%; 
   margin: 100px auto 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #ccc;
+  overflow-x: auto; 
 }
 
 .event-list-title {
@@ -36,22 +38,39 @@
   padding-bottom: 10px;
 }
 
-.event-details p {
-  margin: 10px 0;
+
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
+
+.event-table th, .event-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.event-table th {
+  background-color: #0b4747;
+  color: #fff;
+  font-weight: bold;
+}
+
 
 .event-details:last-child {
   border-bottom: none;
 }
 
+
 .book-event-button-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .book-event-button {
-  width: 45%; 
+  flex: 1;
   padding: 10px;
   background-color: #0b4747;
   color: #fff;
@@ -59,26 +78,51 @@
   border-radius: 3px;
   cursor: pointer;
   margin-top: 10px;
-  margin-right: 5px; 
-  margin-bottom: 10px; 
   font-weight: bold;
   font-family: Arial, sans-serif;
   font-size: 16px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.book-event-button:hover {
+  background-color: #064c4c;
 }
 
 
 @media only screen and (max-width: 768px) {
   .event-list-container {
-    width: 80%; 
+    width: 90%;
+    margin-top: 13rem;
   }
 
   .book-event-button {
     width: 100%; 
     margin-right: 0; 
   }
-  .event-list-container{
-    margin-top: 13rem;
-    overflow-x:scroll;
 
+  .event-table {
+    font-size: 14px; 
+  }
+
+  .Eventlist-page {
+    padding: 10px; 
+  }
+}
+
+
+@media only screen and (max-width: 576px) {
+  .event-list-container {
+    margin-top: 8rem; 
+  }
+
+  .event-table th, .event-table td {
+    font-size: 12px;
+    padding: 8px; 
+  }
+
+  .book-event-button {
+    padding: 8px;
+    font-size: 14px; 
   }
 }

@@ -95,7 +95,15 @@ const EventForm = () => {
         const data = await response.json();
 
         if (response.ok) {
+           // slug
+          localStorage.setItem('slug',data.slug)
+        
+      console.log('Stored slug:', data.slug);
+
+
           console.log("Booking successful", data);
+
+     
 
           setUsername("");
           setFullname("");
