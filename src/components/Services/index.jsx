@@ -27,7 +27,7 @@ function Services() {
     },
     {
       image: "/images/janzi.png",
-      title: "Band Musi",
+      title: "Band Music",
       description: "Hire A Band",
     },
     {

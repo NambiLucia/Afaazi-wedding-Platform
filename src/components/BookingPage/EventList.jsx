@@ -8,12 +8,12 @@ const EventList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  //const slug = localStorage.getItem('slug');
+  const slug = localStorage.getItem('slug');
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/bookings`); // API to fetch bookings
+        const response = await fetch(`http://localhost:5000/bookings/${slug}`); 
         if (!response.ok) {
           throw new Error('Failed to fetch event data');
         }
