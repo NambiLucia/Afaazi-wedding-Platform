@@ -96,9 +96,9 @@ const EventForm = () => {
 
         if (response.ok) {
            // slug
-          localStorage.setItem('slug',data.slug)
+          //localStorage.setItem('slug',data.slug)
         
-      console.log('Stored slug:', data.slug);
+      //console.log('Stored slug:', data.slug);
 
 
           console.log("Booking successful", data);

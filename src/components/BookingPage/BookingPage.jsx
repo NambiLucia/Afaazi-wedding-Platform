@@ -18,7 +18,7 @@ function BookingPage() {
         
         </section>
         <section className="event-form-section">
-          <EventForm onAddEvent={handleAddEvent} />
+          <EventForm onAddEvent={handleAddEvent}/>
         </section>
       </main>
       

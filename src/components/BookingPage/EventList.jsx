@@ -3,31 +3,35 @@ import { Link } from 'react-router-dom';
 import NavBar from '../NavBar';
 import './eventlist.css';
 
-const EventList = () => {
-  const [eventData, setEventData] = useState([]);
+const EventList = ({coupleId}) => {
+  const [eventList, setEventList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const slug = localStorage.getItem('slug');
-
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch(`http://localhost:5000/bookings/${slug}`); 
-        if (!response.ok) {
-          throw new Error('Failed to fetch event data');
-        }
-        const data = await response.json();
-        setEventData(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
-  }, []);
+    if (coupleId) {
+      console.log('Fetching events for ID:', coupleId);
+      const fetchEvents = async () => {
+        try {
+          const response = await fetch(`http://localhost:5000/bookings/couples/${coupleId}`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch event data');
+          }
+          const data = await response.json();
+          console.log('Fetched event list:', data); // Log the fetched data
+          setEventList(data);
+        } catch (err) {
+          console.error('Error fetching events:', err); //Log error details
+          setError(err.message);
+        } 
+        finally {
+          setLoading(false);
+         }
+      };
+  
+      fetchEvents();
+    }
+  }, [coupleId]);
 
   if (loading) {
     return <p>Loading events...</p>;
@@ -41,14 +45,15 @@ const EventList = () => {
     <section className="event-list-page">
       <div className="event-list-container">
         <h2 className="event-list-title">Event List</h2>
-        {eventData && eventData.length > 0 ? (
+        {eventList && eventList.length > 0 ? (
           <div className="event-details">
             <table className="event-table">
               <thead>
                 <tr>
+           
                   <th>Full Name</th>
                   <th>Email</th>
-                  <th>Contact</th>
+                  <th>Telephone</th>
                   <th>Event Date</th>
                   <th>Event Type</th>
                   <th>Country</th>
@@ -59,8 +64,9 @@ const EventList = () => {
                 </tr>
               </thead>
               <tbody>
-                {eventData.map((event, index) => (
+                {eventList.map((event, index) => (
                   <tr key={index}>
+                    
                     <td>{event.fullname}</td>
                     <td>{event.email}</td>
                     <td>{event.telephone}</td>
