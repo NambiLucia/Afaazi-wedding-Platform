@@ -3,54 +3,51 @@ import { Link } from 'react-router-dom';
 import NavBar from '../NavBar';
 import './eventlist.css';
 
-const EventList = ({coupleId}) => {
+const EventList = () => {
   const [eventList, setEventList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (coupleId) {
-      console.log('Fetching events for ID:', coupleId);
-      const fetchEvents = async () => {
+    console.log('Fetching all events');
+    const fetchEvents = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/bookings/couples/${coupleId}`);
-          if (!response.ok) {
-            throw new Error('Failed to fetch event data');
-          }
-          const data = await response.json();
-          console.log('Fetched event list:', data); // Log the fetched data
-          setEventList(data);
+            const response = await fetch(`http://localhost:5000/bookings`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch event data');
+            }
+            const data = await response.json();
+            console.log('Fetched event list:', data); // Log the fetched data
+            setEventList(data);
         } catch (err) {
-          console.error('Error fetching events:', err); //Log error details
-          setError(err.message);
-        } 
-        finally {
-          setLoading(false);
-         }
-      };
-  
-      fetchEvents();
-    }
-  }, [coupleId]);
+            console.error('Error fetching events:', err); // Log error details
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  if (loading) {
+    fetchEvents();
+}, []); 
+
+if (loading) {
     return <p>Loading events...</p>;
-  }
+}
 
-  if (error) {
+if (error) {
     return <p>Error: {error}</p>;
-  }
+}
 
   return (
     <section className="event-list-page">
       <div className="event-list-container">
-        <h2 className="event-list-title">Event List</h2>
+        <h2 className="event-list-title">Event List for Couple ID:</h2>
         {eventList && eventList.length > 0 ? (
           <div className="event-details">
             <table className="event-table">
               <thead>
                 <tr>
-           
+               
                   <th>Full Name</th>
                   <th>Email</th>
                   <th>Telephone</th>

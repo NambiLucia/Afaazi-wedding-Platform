@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/gallery" element={<Gallery />} />
           <Route exact path="/services" element={<Services />} />
           <Route exact path="/bookingpage/eventform" element={<EventForm />} />
-          <Route exact path="/bookingpage/eventlist" element={<EventList />} />
+          <Route exact path="/bookingpage/eventlist" element={<EventList />}  />
           <Route exact path="/vendors" element={<Vendors />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/vendorregister" element={<VendorSignup />} />
