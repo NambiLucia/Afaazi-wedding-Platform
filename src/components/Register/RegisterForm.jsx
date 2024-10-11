@@ -35,7 +35,7 @@ function RegisterForm() {
           setTelephone("");
           setPassword("");
 
-          navigate('/BookingPage');
+          navigate('/login');
         } else {
           alert(`Failed to sign up: ${data.error.message}`);
         }
