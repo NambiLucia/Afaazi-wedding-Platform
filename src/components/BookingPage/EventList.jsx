@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBar from '../NavBar';
 import './eventlist.css';
 
-const EventList = () => {
+const EventList = ({coupleId}) => {
   const [eventList, setEventList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const EventList = () => {
     console.log('Fetching all events');
     const fetchEvents = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/bookings`);
+            const response = await fetch(`http://localhost:5000/bookings/couples/${coupleId}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch event data');
             }
@@ -28,7 +28,7 @@ const EventList = () => {
     };
 
     fetchEvents();
-}, []); 
+}, [coupleId]); 
 
 if (loading) {
     return <p>Loading events...</p>;
