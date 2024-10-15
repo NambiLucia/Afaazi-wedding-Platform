@@ -2,23 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import NavBar from '../NavBar';
 import './eventlist.css';
+import { jwtDecode } from "jwt-decode";
 
-const EventList = ({coupleId}) => {
+const EventList = () => {
   const [eventList, setEventList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
+  
+
   useEffect(() => {
     console.log('Fetching all events');
+
+    const authToken = localStorage.getItem('authToken');
+    console.log(authToken);
+const decoded = jwtDecode(authToken);
+console.log(decoded.id);
+const coupleId =decoded.id;
+
+
     const fetchEvents = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/bookings/couples/${coupleId}`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch event data');
+            const response = await fetch(`http://localhost:5000/bookings/couple/${coupleId}`,
+           
+
+            );
+
+            if(!response.ok){
+              throw new Error("Failed to fetch data");
             }
+          
             const data = await response.json();
             console.log('Fetched event list:', data); // Log the fetched data
-            setEventList(data);
+            setEventList(data.bookings);
         } catch (err) {
             console.error('Error fetching events:', err); // Log error details
             setError(err.message);
@@ -28,7 +45,7 @@ const EventList = ({coupleId}) => {
     };
 
     fetchEvents();
-}, [coupleId]); 
+}, []); 
 
 if (loading) {
     return <p>Loading events...</p>;
@@ -73,7 +90,7 @@ if (error) {
                     <td>{event.city}</td>
                     <td>{event.estimatedBudget}</td>
                     <td>{event.additionalInfo}</td>
-                    <td>{event.vendor.username}</td>
+                    <td>{event.vendor.fullname || 'N/A'}</td>
                   </tr>
                 ))}
               </tbody>
