@@ -34,7 +34,7 @@ const VendorForm = () => {
                     setUsername('');
                     setPassword('');
                  
-                    navigate('/BookingPage');
+                    navigate('/bookingpage/eventlist');
                 } else {
                     alert("Login failed: ");
                 }

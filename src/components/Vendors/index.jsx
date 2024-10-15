@@ -1,10 +1,16 @@
 
 import React from "react";
 import "./vendors.css";
+import NavBar from "../NavBar";
+
 
 function Vendors() {
   return (
+    <>
+    <NavBar />
+    
     <section className="vendors-gallery">
+      
       <div className="vendors-header">
         <h2>TRENDING VENDORS</h2>
       </div>
@@ -94,6 +100,7 @@ function Vendors() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
