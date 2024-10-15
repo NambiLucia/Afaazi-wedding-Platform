@@ -11,6 +11,7 @@ import Gallery from "./components/Gallery";
 import Services from "./components/Services";
 import EventForm from "./components/BookingPage/EventForm";
 import EventList from "./components/BookingPage/EventList";
+import EventlistVendor from "./components/BookingPage/EventlistVendor";
 import Vendors from "./components/Vendors";
 import About from "./components/About";
 import VendorSignup from "./components/VendorSignup/vendorRegister"
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/services" element={<Services />} />
           <Route exact path="/bookingpage/eventform" element={<EventForm />} />
           <Route exact path="/bookingpage/eventlist" element={<EventList />}  />
+          <Route exact path="/bookingpage/EventlistVendor" element={<EventlistVendor />}  />
           <Route exact path="/vendors" element={<Vendors />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/vendorregister" element={<VendorSignup />} />
