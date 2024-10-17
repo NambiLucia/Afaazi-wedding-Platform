@@ -43,12 +43,12 @@ function NavBar() {
             <span>Services</span>
           </Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link to="/gallery">
             <FaImages />
             <span>Gallery</span>
           </Link>
-        </li>
+        </li> */}
         <li className="nav-item">
           <Link to="/vendors">
             <FaUser />
@@ -68,12 +68,12 @@ function NavBar() {
 </li>
 
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link to="/contact">
             <FaEnvelope />
             <span>Contact us</span>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
