@@ -18,8 +18,8 @@ function Footer() {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul className="footer-menu">
-            <li><Link to="/services" className="footer-link">Who We Are</Link></li>
-            <li><Link to="/contact" className="footer-link">Book with US</Link></li>
+            <li><Link to="/About" className="footer-link">Who We Are</Link></li>
+            <li><Link to="/login" className="footer-link">Book with US</Link></li>
           </ul>
         </div>
         <div className="footer-section">
