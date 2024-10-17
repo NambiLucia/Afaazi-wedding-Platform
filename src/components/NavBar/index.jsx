@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import {
   FaHome,
   FaUser,
@@ -12,8 +12,32 @@ import {
 import "./navbar.css";
 import { Link } from "react-router-dom";
 
+const serviceProviders = [
+{id:1, name:"Mona Faces(1)"},
+{id:2, name:"Hair By Zziwa(2)"},
+{id:3, name:"Golazo Photography(3)"},
+
+];
+
 
 function NavBar() {
+  const [name, setName] = useState("");
+  const [result, setResult]= useState([]);
+const handleInputChange =(e)=>{
+  const searchWord =e.target.value.toLowerCase();
+  setName(searchWord);
+
+const filteredVendor = serviceProviders.filter((serviceprovider) =>{
+    return serviceprovider.name.toLowerCase().includes(searchWord)
+  })
+
+ setResult(filteredVendor);
+
+
+}
+
+
+
   return (
     <nav className="navbar">
       <ul className="navbar-nav">
@@ -43,12 +67,15 @@ function NavBar() {
             <span>Services</span>
           </Link>
         </li>
+       
+
         {/* <li className="nav-item">
           <Link to="/gallery">
             <FaImages />
             <span>Gallery</span>
           </Link>
         </li> */}
+        
         <li className="nav-item">
           <Link to="/vendors">
             <FaUser />
@@ -66,6 +93,44 @@ function NavBar() {
         <Link to="/Vendorlogin" className="dropdown-item">Vendor</Link>
     </div>
 </li>
+
+
+
+<li>
+        <input
+        type="search"
+        value={name}
+        onChange={handleInputChange}
+        className="input"
+        placeholder="search vendor"
+      />
+       </li>
+
+
+       <div className="search-results-container">
+        {name && (
+          <ul className="search-results">
+            {result.length > 0 ? (
+              result.map((serviceprovider) => (
+                <li key={serviceprovider.id} className="result-item">
+                  {serviceprovider.name}
+                </li>
+              ))
+            ) : (
+              <li className="result-item">No vendors found</li>
+            )}
+          </ul>
+        )}
+      </div>
+
+
+
+
+
+
+
+
+
 
 
         {/* <li className="nav-item">
