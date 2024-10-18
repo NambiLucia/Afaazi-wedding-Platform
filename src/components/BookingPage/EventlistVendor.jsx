@@ -8,8 +8,7 @@ const EventlistVendor = () => {
   const [eventList, setEventList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-
+ 
   
 
   useEffect(() => {
@@ -105,7 +104,9 @@ if (error) {
             <button className="book-event-button">Close Event</button>
           </Link>
           <Link to="/bookingpage/eventform" className="book-event-link">
-            <button className="book-event-button">Book Event</button>
+            <button className="book-event-button"
+              disabled
+            >Book Event</button>
           </Link>
         </div>
         <NavBar />

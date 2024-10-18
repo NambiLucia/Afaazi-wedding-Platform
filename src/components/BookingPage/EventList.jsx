@@ -54,7 +54,7 @@ const EventList = () => {
   return (
     <section className="event-list-page">
       <div className="event-list-container">
-        <h2 className="event-list-title">Event List for Couple ID:</h2>
+        <h2 className="event-list-title">Event List for Couple</h2>
         {eventList && eventList.length > 0 ? (
           <div className="event-details">
             <table className="event-table">
