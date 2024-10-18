@@ -16,6 +16,10 @@ const serviceProviders = [
 {id:1, name:"Mona Faces(1)"},
 {id:2, name:"Hair By Zziwa(2)"},
 {id:3, name:"Golazo Photography(3)"},
+{id:4, name:"Kembabazi Catering(4)"},
+{id:5, name:"iCandy Ug(5)"},
+{id:6, name:"Latitude 0 degrees(6)"},
+
 
 ];
 
