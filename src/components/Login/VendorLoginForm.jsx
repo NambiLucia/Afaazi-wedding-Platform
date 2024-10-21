@@ -31,6 +31,15 @@ const VendorForm = () => {
 
                 if (response.ok) {
                     console.log("Login successful", data);
+
+                    
+                    //store token in local storage
+
+                 localStorage.setItem('authToken',data.vendorToken)
+                 // Optionally log the token
+             console.log('Stored token:', data.vendorToken);
+
+
                     setUsername('');
                     setPassword('');
                  

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import NavBar from '../NavBar';
 import "./EventlistVendor.css";
-//import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 const EventlistVendor = () => {
   const [eventList, setEventList] = useState([]);
@@ -14,17 +14,17 @@ const EventlistVendor = () => {
   useEffect(() => {
     console.log('Fetching all events');
 
-    const authToken = localStorage.getItem('authToken');
+    const authToken = localStorage.getItem("authToken");
     console.log(authToken);
-// const decoded = jwtDecode(authToken);
-// console.log(decoded.id);
-// const vendorId =decoded.id;
-// //const vendorUsername =decoded.username;
+ const decoded = jwtDecode(authToken);
+ console.log(decoded.id);
+ const vendorId =decoded.id;
+
 
 
     const fetchEvents = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/bookings`,
+            const response = await fetch(`http://localhost:5000/bookings/couple/${vendorId}`,
            
 
             ); 
@@ -35,7 +35,7 @@ const EventlistVendor = () => {
           
             const data = await response.json();
             console.log('Fetched Vendor event list:', data); // Log the fetched data
-            setEventList(data);
+            setEventList(data.bookings);
         } catch (err) {
             console.error('Error fetching Vendor events:', err); // Log error details
             setError(err.message);
@@ -90,7 +90,7 @@ if (error) {
                     <td>{event.city}</td>
                     <td>{event.estimatedBudget}</td>
                     <td>{event.additionalInfo}</td>
-                    <td>{event.vendor.username || 'N/A'}</td>
+                    <td>{event.vendor.fullname || 'N/A'}</td>
                   </tr>
                 ))}
               </tbody>
