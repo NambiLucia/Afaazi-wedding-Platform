@@ -24,7 +24,7 @@ const EventlistVendor = () => {
 
     const fetchEvents = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/bookings/couple/${vendorId}`,
+            const response = await fetch(`http://localhost:5000/bookings/vendor/${vendorId}`,
            
 
             ); 
