@@ -15,7 +15,7 @@ function Home () {
         <Hero />
         <Services />
         <Vendors />
-        <Packages />
+        {/* <Packages /> */}
         <Contact />
     
 </>

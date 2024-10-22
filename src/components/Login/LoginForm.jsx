@@ -83,7 +83,7 @@ const LoginForm = () => {
                 </form>
                 <div className="signup-option">
                     <p>Don't have an account?</p>
-                    <p><Link to="/register">Sign Up as a Couple</Link> OR <Link to="/vendorregister">Vendor</Link>
+                    <p><Link to="/register">Sign Up as a <strong>Couple</strong></Link> OR <Link to="/vendorregister"><strong>Vendor</strong></Link>
                     </p>
                 </div>
             </div>
