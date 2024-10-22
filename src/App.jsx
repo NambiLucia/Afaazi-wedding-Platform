@@ -16,6 +16,8 @@ import Vendors from "./components/Vendors";
 import About from "./components/About";
 import VendorSignup from "./components/VendorSignup/vendorRegister"
 import Vendorlogin from "./components/Login/vendorlog"
+import VendorDisplayPage from "./components/Packages";
+import AshtonPage from "../Display/ashton";
 
 
 
@@ -42,6 +44,8 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/vendorregister" element={<VendorSignup />} />
           <Route exact path="/Vendorlogin" element={<Vendorlogin />} />
+          <Route exact path="/vendordisplay" element={<VendorDisplayPage />} />
+          <Route exact path="/ashtonpage" element={<AshtonPage />} />
           
         </Routes>
         <Footer />

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; 
-import NavBar from '../NavBar';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import NavBar from "../NavBar";
 import "./EventlistVendor.css";
 import { jwtDecode } from "jwt-decode";
 
@@ -8,63 +8,57 @@ const EventlistVendor = () => {
   const [eventList, setEventList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
- 
-  
 
   useEffect(() => {
-    console.log('Fetching all events');
+    console.log("Fetching all events");
 
     const authToken = localStorage.getItem("authToken");
     console.log(authToken);
- const decoded = jwtDecode(authToken);
- console.log(decoded.id);
- const vendorId =decoded.id;
-
-
+    const decoded = jwtDecode(authToken);
+    console.log(decoded.id);
+    const vendorId = decoded.id;
 
     const fetchEvents = async () => {
-        try {
-            const response = await fetch(`http://localhost:5000/bookings/vendor/${vendorId}`,
-           
+      try {
+        const response = await fetch(
+          `http://localhost:5000/bookings/vendor/${vendorId}`
+        );
 
-            ); 
-
-            if(!response.ok){
-              throw new Error("Failed to fetch data");
-            }
-          
-            const data = await response.json();
-            console.log('Fetched Vendor event list:', data); // Log the fetched data
-            setEventList(data.bookings);
-        } catch (err) {
-            console.error('Error fetching Vendor events:', err); // Log error details
-            setError(err.message);
-        } finally {
-            setLoading(false);
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
         }
+
+        const data = await response.json();
+        console.log("Fetched Vendor event list:", data); // Log the fetched data
+        setEventList(data.bookings);
+      } catch (err) {
+        console.error("Error fetching Vendor events:", err); // Log error details
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchEvents();
-}, []); 
+  }, []);
 
-if (loading) {
+  if (loading) {
     return <p>Loading events...</p>;
-}
+  }
 
-if (error) {
+  if (error) {
     return <p>Error: {error}</p>;
-}
+  }
 
   return (
     <section className="event-list-page">
       <div className="event-list-container">
-      <h2 className="event-list-title">Event List for Vendors</h2>
+        <h2 className="event-list-title">Event List for Vendors</h2>
         {eventList && eventList.length > 0 ? (
           <div className="event-details">
             <table className="event-table">
               <thead>
                 <tr>
-               
                   <th>Full Name</th>
                   <th>Email</th>
                   <th>Telephone</th>
@@ -80,7 +74,6 @@ if (error) {
               <tbody>
                 {eventList.map((event, index) => (
                   <tr key={index}>
-                    
                     <td>{event.fullname}</td>
                     <td>{event.email}</td>
                     <td>{event.telephone}</td>
@@ -90,7 +83,7 @@ if (error) {
                     <td>{event.city}</td>
                     <td>{event.estimatedBudget}</td>
                     <td>{event.additionalInfo}</td>
-                    <td>{event.vendor.fullname || 'N/A'}</td>
+                    <td>{event.vendor.fullname || "N/A"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -104,9 +97,9 @@ if (error) {
             <button className="book-event-button">Close Event</button>
           </Link>
           <Link to="/bookingpage/eventform" className="book-event-link">
-            <button className="book-event-button"
-              disabled
-            >Book Event</button>
+            <button className="book-event-button" disabled>
+              Book Event
+            </button>
           </Link>
         </div>
         <NavBar />

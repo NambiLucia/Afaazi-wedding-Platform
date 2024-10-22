@@ -1,93 +1,149 @@
-#packages {
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.packages-header h2 {
+body, html {
   margin: 0;
-  font-size: 2rem;
-  color: #333;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%; 
 }
 
-.packages-card-container {
+#vendor-page {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 40px;
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh;
+  padding: 40px; 
+  background-image: url('baraka.png'); 
+  background-size: cover; 
+  background-position: center; 
 }
 
-.packages-card {
-  width: calc(33.33% - 20px);
-  max-width: 300px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  transition: transform 0.3s ease;
-}
-
-.packages-card:hover {
-  transform: translateY(-5px);
-}
-
-.packages-card-content {
+.vendor-content {
+  width: 60%; 
+  background-color: rgba(255, 255, 255, 0.9); 
   padding: 30px;
+  border-radius: 12px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  border: 1px solid #e0e0e0; 
+  margin-top:2.9em;
 }
 
-.packages-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+
+.vendor-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.vendor-header h2 {
+  font-size: 2.5em; 
+  font-weight: bold;
   color: #333;
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
 }
 
-.packages-card p {
-  margin: 0;
-  color: #170404;
+.vendor-description,
+.vendor-items,
+.vendor-location,
+.vendor-testimonials {
+  margin-bottom: 20px;
+  
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #4CAF50; 
+  margin-bottom: 10px;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 5px; 
+}
+
+.vendor-description p,
+.vendor-items ul,
+.vendor-location p,
+.vendor-testimonials blockquote {
+  font-size: 1.1em;
   line-height: 1.6;
+  color: #555;
 }
 
-.card-a {
-  background-color: #45a063;
+.vendor-items ul {
+  list-style-type: none;
+  padding-left: 0; 
 }
 
-.card-b {
-  background-color: #8cbd48; 
+.vendor-items li {
+  background-color: #f9f9f9; 
+  margin: 10px 0;
+  padding: 10px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.card-c {
-  background-color: #f4e669; 
+
+.item-price {
+  font-weight: bold; 
+  color: #4CAF50; 
+  margin-left: 10px; 
 }
 
-.card-d {
-  background-color: #f5efbb; 
+
+.vendor-testimonials blockquote {
+  font-style: italic;
+  background-color: #fafafa;
+  padding: 15px;
+  border-left: 5px solid #4CAF50;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: #666;
 }
 
-.card-e {
-  background-color: #f5efbb; 
+
+.vendor-whatsapp-button {
+  text-align: center;
+  margin: 20px 0; 
 }
 
-.card-f {
-  background-color: #f4e669; 
+.whatsapp-button {
+  display: inline-block; 
+  padding: 12px 30px;
+  background-color: #25D366; 
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em; 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
-.card-g {
-  background-color: #8cbd48; 
+.whatsapp-button:hover {
+  background-color: #1DAF3D; 
+  transform: scale(1.05); 
 }
 
-.card-h {
-  background-color: #45a063; 
+
+.vendor-login-button {
+  text-align: center;
+  margin-top: 30px;
 }
+
+.vendor-login-button button {
+  padding: 12px 30px;
+  background-color: #0b4747;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em; 
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+ .vendor-login-button button:hover {
+  background-color: #152816;
+  transform: scale(1.05); 
+} 
 
 
 @media (max-width: 768px) {
-  .packages-card {
-    width: calc(50% - 20px);
-  }
-}
-
-@media (max-width: 480px) {
-  .packages-card {
-    width: 100%;
+  .vendor-content {
+    width: 90%; 
   }
 }

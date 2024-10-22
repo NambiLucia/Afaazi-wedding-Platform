@@ -18,7 +18,7 @@ function Vendors() {
       <div className="vendors-card-container">
         
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/vendordisplay" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\mona.png" alt="Mona" />
               <h2>Mona Faces</h2>
@@ -28,7 +28,7 @@ function Vendors() {
         </div>
 
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/ashtonpage" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\ashton.png" alt="Ashton" />
               <h2>Ashton Events</h2>
