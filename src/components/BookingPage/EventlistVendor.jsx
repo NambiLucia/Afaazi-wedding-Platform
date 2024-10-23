@@ -32,7 +32,7 @@ const EventlistVendor = () => {
         console.log("Fetched Vendor event list:", data); // Log the fetched data
         setEventList(data.bookings);
       } catch (err) {
-        console.error("Error fetching Vendor events:", err); // Log error details
+        console.error("Error fetching Vendor events:", err); // Log the error details
         setError(err.message);
       } finally {
         setLoading(false);
