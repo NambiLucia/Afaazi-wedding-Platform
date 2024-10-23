@@ -38,7 +38,7 @@ function Vendors() {
         </div>
 
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/zziwapage" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\zziwa.png" alt="Zziwa" />
               <h2>Hair By Zziwa </h2>
@@ -48,7 +48,7 @@ function Vendors() {
         </div>
 
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/kempage" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\kembabzi.png" alt="Kembabazi" />
               <h2>Kembabazi Catering</h2>
@@ -60,7 +60,7 @@ function Vendors() {
 
       <div className="vendors-card-container">
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/janzipage" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\janzi.png" alt="Janzi Band" />
               <h2>Janzi Band</h2>
