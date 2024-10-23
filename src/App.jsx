@@ -18,6 +18,9 @@ import VendorSignup from "./components/VendorSignup/vendorRegister"
 import Vendorlogin from "./components/Login/vendorlog"
 import VendorDisplayPage from "./components/Packages";
 import AshtonPage from "../Display/ashton";
+import ZziwaPage from "../Display/zziwa";
+import KemPage from "../Display/kem";
+import JanziPage from "../Display/janzi";
 
 
 
@@ -46,6 +49,9 @@ function App() {
           <Route exact path="/Vendorlogin" element={<Vendorlogin />} />
           <Route exact path="/vendordisplay" element={<VendorDisplayPage />} />
           <Route exact path="/ashtonpage" element={<AshtonPage />} />
+          <Route exact path="/zziwapage" element={<ZziwaPage />} />
+          <Route exact path="/kempage" element={<KemPage />} />
+          <Route exact path="/janzipage" element={<JanziPage />} />
           
         </Routes>
         <Footer />
