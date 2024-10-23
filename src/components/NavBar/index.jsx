@@ -17,6 +17,10 @@ const serviceProviders = [
   { id: 4, name: "Kembabazi Catering(4)" },
   { id: 5, name: "iCandy Ug(5)" },
   { id: 6, name: "Latitude 0 degrees(6)" },
+  { id: 7, name: "Ashton Events(7)" },
+  { id: 8, name: "Executive Rides(8)" },
+  { id: 9, name: "Charsan Deco(9)" },
+  { id: 10, name: "Film Report(10)" },
 ];
 
 function NavBar() {

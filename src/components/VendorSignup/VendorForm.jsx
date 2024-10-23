@@ -39,7 +39,7 @@ function VendorForm() {
           setPassword("");
           setCategory("");
 
-          navigate('/bookingpage/EventlistVendor');
+          navigate('/Vendorlogin');
 
         } else {
           alert(`Failed to sign up: ${data.error.message}`);
