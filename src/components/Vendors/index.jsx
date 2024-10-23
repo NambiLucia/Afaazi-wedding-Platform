@@ -70,7 +70,7 @@ function Vendors() {
         </div>
 
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/latitudepage" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\latitude.png" alt="Latitude 0 Degrees" />
               <h2>Latitude 0 Degrees</h2>
@@ -80,7 +80,7 @@ function Vendors() {
         </div>
 
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/ridespage" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\executive.png" alt="Executive Rides Ug" />
               <h2>Executive Rides Ug</h2>
@@ -90,7 +90,7 @@ function Vendors() {
         </div>
 
         <div className="vendors-card">
-          <a href="/#packages" className="vendors-card-link">
+          <a href="/stratpage" className="vendors-card-link">
             <div className="vendors-card-content">
               <img src="\images\strat2x.png" alt="Strat Bridal" />
               <h2>Strat Bridal</h2>
