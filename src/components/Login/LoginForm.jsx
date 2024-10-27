@@ -10,7 +10,7 @@ const LoginForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (username && password) {
-            const apiUrl = "http://localhost:5000/couples/login";
+            const apiUrl = "https://afaazi-server.onrender.com/couples/login";
 
             const newLoginObj = {
                 method: "POST",

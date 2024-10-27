@@ -15,7 +15,7 @@ function RegisterForm() {
     e.preventDefault();
     if (username && fullname && email && telephone && password) {
       try {
-        const response = await fetch('http://localhost:5000/couples/register', {
+        const response = await fetch('https://afaazi-server.onrender.com/couples/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

@@ -29,10 +29,10 @@ function NavBar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate(); 
 
-  // Check if the token exists when the component mounts
+ 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    if (token) {
+    if (token) {                // Check if the auth token exists
       setIsLoggedIn(true);
     }
   }, []);
@@ -49,12 +49,12 @@ function NavBar() {
   };
 
   const handleLoginClick = () => {
-    //
+   
     navigate('/login');
   };
 
   const handleLogoutClick = () => {
-    // Clear the token from localStorage and log the user out
+    // Clear auth token from localStorage and log out
     localStorage.removeItem("authToken");
     setIsLoggedIn(false);
     navigate('/'); 
