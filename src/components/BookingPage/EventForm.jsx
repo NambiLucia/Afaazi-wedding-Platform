@@ -48,7 +48,7 @@ const EventForm = () => {
       additionalInfo &&
       vendorId
     ) {
-      const apiUrl = "http://localhost:5000/bookings/create-booking";
+      const apiUrl = "https://afaazi-server.onrender.com/bookings/create-booking";
 
       const parsedVendorId = parseInt(vendorId, 10);
 

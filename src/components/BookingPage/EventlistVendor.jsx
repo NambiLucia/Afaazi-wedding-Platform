@@ -21,7 +21,7 @@ const EventlistVendor = () => {
     const fetchEvents = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/bookings/vendor/${vendorId}`
+          `https://afaazi-server.onrender.com/bookings/vendor/${vendorId}`
         );
 
         if (!response.ok) {

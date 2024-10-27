@@ -17,7 +17,7 @@ function VendorForm() {
     e.preventDefault();
     if (username && fullname && email && telephone && password && category) {
       try {
-        const response = await fetch('http://localhost:5000/vendors/register', {
+        const response = await fetch('https://afaazi-server.onrender.com/vendors/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -42,7 +42,7 @@ function VendorForm() {
           navigate('/Vendorlogin');
 
         } else {
-          alert(`Failed to sign up: ${data.error.message}`);
+          alert(`Failed to sign up: ${data.error?.message || data.error || 'An unknown error occurred.'}`);
         }
       } catch (error) {
         console.error('Error signing up:', error);
@@ -131,6 +131,8 @@ function VendorForm() {
             <option value="Catering">Catering</option>
             <option value="Car Hire">Car Hire</option>
             <option value="Venues">Venues</option>
+            <option value="Music">Music</option>
+            {/* <option value="Bridal wear">Bridal Wear</option> */}
         
               </select>
           </div> 

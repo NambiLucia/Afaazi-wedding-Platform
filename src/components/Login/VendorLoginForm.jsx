@@ -10,7 +10,7 @@ const VendorForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (username && password) {
-            const apiUrl = "http://localhost:5000/vendors/login";
+            const apiUrl = "https://afaazi-server.onrender.com/vendors/login";
 
             const newVendorLoginObj = {
                 method: "POST",
