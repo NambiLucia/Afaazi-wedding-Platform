@@ -12,15 +12,15 @@ import { Link, useNavigate } from "react-router-dom";
 
 const serviceProviders = [
   { id: 1, name: "Mona Faces(1)" },
-  { id: 2, name: "Hair By Zziwa(2)" },
-  { id: 3, name: "Golazo Photography(3)" },
+  { id: 2, name: "Ashton Events(2)"},
+  { id: 3, name: "Hair By Zziwa(3)" },
   { id: 4, name: "Kembabazi Catering(4)" },
-  { id: 5, name: "iCandy Ug(5)" },
-  { id: 6, name: "Latitude 0 degrees(6)" },
-  { id: 7, name: "Ashton Events(7)" },
+  { id: 5, name: "Janzi Band(5)" },
+  { id: 7, name: "Latitude 0 degrees(7)" },
   { id: 8, name: "Executive Rides(8)" },
   { id: 9, name: "Charsan Deco(9)" },
-  { id: 10, name: "Film Report(10)" },
+  { id: 10, name: "Strat Bridal(10)" },
+  { id: 11, name: "Bee Photography(10)" },
 ];
 
 function NavBar() {
