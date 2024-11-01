@@ -35,8 +35,13 @@ Clone the repository
 Ensure you have a backend service running to handle API requests. In our case, we used **Strapi**.
 
 # API Endpoints
-- User Register:GET (http://localhost:1337/api/auth/local/register)
-- User Logins: GET (http://localhost:1337/api/auth/local)
+- Couple Register:POST (https://afaazi-server.onrender.com/couples/register)
+- Couple Logins: POST (https://afaazi-server.onrender.com/couples/login)
+- Vendor Register: POST(https://afaazi-server.onrender.com/vendors/register)
+- Couple Logins: POST(https://afaazi-server.onrender.com/vendors/login)
+- Create Booking : POST(https://afaazi-server.onrender.com/bookings/create-booking)
+- Booking by Couple ID : GET(https://afaazi-server.onrender.com/bookings/couple/id)
+- Booking by Vendor ID : GET(https://afaazi-server.onrender.com/bookings/vendor/id)
 
 ## API testing
 We used **Postman**
